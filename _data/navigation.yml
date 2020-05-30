@@ -1,5 +1,5 @@
 - name: Blog
-  link: https://blog.korge.soywiz.com/
+  link: https://blog.korge.org/
   icon: fab fa-wordpress
   new_window: true
   highlight: false

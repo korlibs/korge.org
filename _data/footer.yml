@@ -4,7 +4,7 @@
   - name: Forum
     link: https://forum.soywiz.com/
   - name: Blog
-    link: https://soywiz.com/tag/korlibs/
+    link: https://blog.korge.org/
 - links:
   - name: Klock
     link: https://github.com/korlibs/klock/
@@ -20,11 +20,11 @@
     new_window: true
 - links:
   - name: Facebook
-    link: https://www.facebook.com/soywiz
+    link: https://www.facebook.com/KorgeGameEngine
     new_window: true
     social_icon: Facebook
   - name: Twitter
-    link: https://twitter.com/cballesterosvel
+    link: https://twitter.com/KorgeGameEngine
     social_icon: Twitter
     new_window: true
   - name: YouTube
