@@ -13,6 +13,11 @@
   icon: fab fa-slack
   new_window: true
   highlight: false
+- name: GameJAM
+  link: https://jam.korge.org/
+  icon: fas fa-trophy
+  new_window: true
+  highlight: false
 - name: GitHub
   icon: fab fa-github
   link: https://github.com/korlibs/korge
