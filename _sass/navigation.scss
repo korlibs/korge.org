@@ -1,7 +1,7 @@
 .nav-open nav {
 	border-bottom: 1px dotted rgba(255, 255, 255, .2);
 	padding: 10px 0;
-	a {
+	div {
 		display: block;
 	}
 
@@ -9,7 +9,7 @@
 		border: 0;
 		padding: 0 20px;
 
-		a {
+		div {
 			display: inline;
 		}
 	}
@@ -28,8 +28,19 @@ nav {
 		padding: 0 20px;
 	}
 
+	ul{
+		list-style-type: none;
+	}
 
-	a {
+	.subitem {
+		display: none;
+	}
+
+	.menuitem:hover .subitem {
+		display: block;
+	}
+
+	div {
 		margin: 0 3px;
 		padding: 20px 10px;
 		border-bottom: 1px solid rgba(255,255,255,0);
@@ -61,8 +72,7 @@ nav {
 		}
 	}
 
-	a:hover {
-
+	div:hover {
 		border-bottom: 1px solid rgba(255,255,255,.3);
 		color: #fff;
 	}
@@ -79,7 +89,7 @@ nav {
 		}
 	}
 
-	a.active {
+	div.active {
 		color: #fff;
 	}
 
