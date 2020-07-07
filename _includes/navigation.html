@@ -14,13 +14,15 @@
 		<a href="{% include relative-src.html src=link.link %}" {% if link.new_window %}target="_blank"{% endif %}><i class="{{ link.icon }}"></i> {{ link.name }}</a>
 
 		{% if link.subitems != null %}
-			<ul class="submenu">
+		<div class="submenu">
+			<ul class="submenu_menu">
 			{% for subitem in link.subitems %}
 				<li class="subitem">
 					<a href="{% include relative-src.html src=subitem.link %}" class="{{ class }}" {% if subitem.new_window %}target="_blank"{% endif %}><i class="{{ subitem.icon }}"></i> {{ subitem.name }}</a>
 				</li>		
 			{% endfor %}
 			<ul>
+		</div>
 		{% endif %}
 	</div>
 	{% endfor %}

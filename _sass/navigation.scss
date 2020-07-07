@@ -32,12 +32,45 @@ nav {
 		list-style-type: none;
 	}
 
-	.subitem {
-		display: none;
+  .menuitem {
+	position: relative;
+  }
+
+  .submenu {
+	box-sizing: border-box;
+	margin: 1em 0 0 0;
+	padding: 0;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	display: block;
+	background: #0000003f;
+	z-index: 10;
+	width: 100%;
+	.submenu_menu {
+	  box-sizing: border-box;
+	  padding: 0;
+	  display: block;
+	  width: 100%;
+	  margin :0;
+	  li {
+		box-sizing: border-box;
+		padding: 0;
+		a {
+		  box-sizing: border-box;
+		  padding: 0.6em 0.9em;
+		  width: 100%;
+		  display: block;
+		}
+	  }
+	}
+  }
+	.submenu {
+		visibility: hidden;
 	}
 
-	.menuitem:hover .subitem {
-		display: block;
+	.menuitem:hover .submenu, .menuitem .submenu:hover {
+	  visibility: visible;
 	}
 
 	div {
@@ -72,7 +105,12 @@ nav {
 		}
 	}
 
-	div:hover {
+	li {
+	  padding: 0.5em;
+	  border-bottom: 1px solid rgba(0, 0, 0, 0);
+	}
+
+	div:hover, li:hover {
 		border-bottom: 1px solid rgba(255,255,255,.3);
 		color: #fff;
 	}

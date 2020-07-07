@@ -24,6 +24,7 @@
   new_window: true
   highlight: false
 - name: Community
+  icon: fas fa-comments
   subitems:
   - name: Discord
     link: https://discord.korge.org/
