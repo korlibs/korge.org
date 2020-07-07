@@ -1,7 +1,7 @@
 .nav-open nav {
 	border-bottom: 1px dotted rgba(255, 255, 255, .2);
 	padding: 10px 0;
-	a {
+	div {
 		display: block;
 	}
 
@@ -9,7 +9,7 @@
 		border: 0;
 		padding: 0 20px;
 
-		a {
+		div {
 			display: inline;
 		}
 	}
@@ -28,8 +28,52 @@ nav {
 		padding: 0 20px;
 	}
 
+	ul{
+		list-style-type: none;
+	}
 
-	a {
+  .menuitem {
+	position: relative;
+  }
+
+  .submenu {
+	box-sizing: border-box;
+	margin: 1em 0 0 0;
+	padding: 0;
+	text-align: right;
+	position: absolute;
+	right: 0;
+	display: block;
+	background: #0000003f;
+	z-index: 10;
+	width: 100%;
+	.submenu_menu {
+	  box-sizing: border-box;
+	  padding: 0;
+	  display: block;
+	  width: 100%;
+	  margin :0;
+	  li {
+		box-sizing: border-box;
+		padding: 0;
+		a {
+		  box-sizing: border-box;
+		  padding: 0.6em 0.9em;
+		  width: 100%;
+		  display: block;
+		}
+	  }
+	}
+  }
+	.submenu {
+		visibility: hidden;
+	}
+
+	.menuitem:hover .submenu, .menuitem .submenu:hover {
+	  visibility: visible;
+	}
+
+	div {
 		margin: 0 3px;
 		padding: 20px 10px;
 		border-bottom: 1px solid rgba(255,255,255,0);
@@ -61,8 +105,12 @@ nav {
 		}
 	}
 
-	a:hover {
+	li {
+	  padding: 0.5em;
+	  border-bottom: 1px solid rgba(0, 0, 0, 0);
+	}
 
+	div:hover, li:hover {
 		border-bottom: 1px solid rgba(255,255,255,.3);
 		color: #fff;
 	}
@@ -79,7 +127,7 @@ nav {
 		}
 	}
 
-	a.active {
+	div.active {
 		color: #fff;
 	}
 

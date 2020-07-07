@@ -8,19 +8,9 @@
   icon: fa fa-book
   new_window: true
   highlight: false
-- name: Forum
-  link: https://forum.korge.org/
-  icon: fas fa-comments
-  new_window: true
-  highlight: false
 - name: Dokka
   link: https://dokka.korge.org/
   icon: fas fa-question-circle
-  new_window: true
-  highlight: false
-- name: Slack
-  link: https://slack.korge.org/
-  icon: fab fa-slack
   new_window: true
   highlight: false
 - name: Youtube
@@ -33,6 +23,24 @@
   icon: fas fa-trophy
   new_window: true
   highlight: false
+- name: Community
+  icon: fas fa-comments
+  subitems:
+  - name: Discord
+    link: https://discord.korge.org/
+    icon: fab fa-discord
+    new_window: true
+    highlight: false
+  - name: Slack
+    link: https://slack.korge.org/
+    icon: fab fa-slack
+    new_window: true
+    highlight: false
+  - name: Forum     
+    link: https://forum.korge.org/
+    icon: fas fa-comments
+    new_window: true
+    highlight: false
 - name: GitHub
   icon: fab fa-github
   link: https://github.com/korlibs/korge
