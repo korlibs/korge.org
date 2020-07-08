@@ -27,7 +27,7 @@
   icon: fas fa-comments
   subitems:
   - name: Discord
-    link: https://discord.korge.org/
+    link: https://discord.gg/jKCxCHn
     icon: fab fa-discord
     new_window: true
     highlight: false
