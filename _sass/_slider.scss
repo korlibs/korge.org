@@ -14,9 +14,9 @@
         content: '';
         width: 33%;
         height: 100%;
-        background: -webkit-linear-gradient(rgba(0, 103, 244, 0.3) 0%, rgba(43, 219, 220, 0.3) 100%);
-        background: -o-linear-gradient(rgba(0, 103, 244, 0.3) 0%, rgba(43, 219, 220, 0.3) 100%);
-        background: linear-gradient(rgba(0, 103, 244, 0.3) 0%, rgba(43, 219, 220, 0.3) 100%);
+        background: -webkit-linear-gradient($slider-gradient-color1 0%, $slider-gradient-color2 100%);
+        background: -o-linear-gradient($slider-gradient-color1 0%, $slider-gradient-color2 100%);
+        background: linear-gradient($slider-gradient-color1 0%, $slider-gradient-color2 100%);
         top: 0;
         right: 15%;
         @include transform(skewX(20deg));

@@ -1,6 +1,6 @@
 ---
 title: KorGE
-image: assets/images/slider/1.png
+image: assets/images/slider/korge.svg
 order: 0
 buttons:
 - title: Get Stated
