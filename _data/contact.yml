@@ -1,15 +1,20 @@
 - content: |
     [Forum](https://forum.korge.org/)
+
+    [Stackoverflow](https://stackoverflow.com/questions/tagged/korge)
   icon: lni lni-map-marker
   color: 1
 - content: |
-    [info@korge.org](mailto:info@korge.org)
-  icon: lni lni-envelope
+    [Slack](https://slack.korge.org/)
+
+    [Discord](https://discord.gg/jKCxCHn)
+  icon: lni lni-map-marker
   color: 2
 - content: |
-    +333 789-321-654
-
-    +333 985-458-609
-  icon: lni lni-phone
+    [Youtube](https://korge.youtube.org)
+  icon: lni lni-map-marker
   color: 3
-
+- content: |
+    [info@korge.org](mailto:info@korge.org)
+  icon: lni lni-envelope
+  color: 4

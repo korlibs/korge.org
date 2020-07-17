@@ -83,6 +83,13 @@ p{
                 }
             }
         }
+        &.contact-color-4{
+            & .contact-info-icon{
+                & i{
+                    background-color: $primary-four;
+                }
+            }
+        }
     }
 }
 

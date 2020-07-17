@@ -5,6 +5,12 @@
 
 .slider_area{}
 
+.carousel-placeholder {
+    background-color: $primary-one;
+    height: 96px;
+    width:100%;
+}
+
 .carousel-item {
     background-color: $primary-one;
     position: relative;

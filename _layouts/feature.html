@@ -2,4 +2,53 @@
 layout: post
 ---
 
-{{ content }}
+{% assign feature_pages = site.pages | where:"feature",true %}
+{% assign feature_pages = feature_pages | sort: "order" %}
+
+<style>
+.inline-menu {
+    padding-bottom: 2em;
+}
+.inline-menu ul {
+    display: block;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.inline-menu li {
+    display: inline-block;
+}
+.inline-menu li:after {
+    content: ', '
+}
+.inline-menu li:last-child:after {
+    content: '' !important;
+}
+</style>
+
+<section id="features" class="features-area" style="padding-top: 60px;">
+
+    <div class="inline-menu row justify-content-center">
+        <ul>
+            {% for feature in feature_pages %}
+            <li><a href="{{ feature.url }}">{{ feature.title_menu }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-10">
+                    <h3 class="title">{{ page.title_full | default: page.title }}</h3>
+                </div> <!-- row -->
+            </div>
+        </div> <!-- row -->
+        <div class="row justify-content-center">
+            <div class="section-title text-center pb-10 text_container">
+                {{ content }}
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+{% include features.html %}
