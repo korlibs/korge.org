@@ -16,11 +16,12 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="slider-content">
-                            <h1 class="title">KorGE</h1>
-                            <p class="text">Modern Multiplatform Game Engine for Kotlin.</p>
+                            <h1 class="title">{{ carousel_item.title }}</h1>
+                            <p class="text">{{ carousel_item.content }}</p>
                             <ul class="slider-btn rounded-buttons">
-                                <li><a class="main-btn rounded-one" href="https://korlibs.soywiz.com/korge/setup/" target="_blank">GET STARTED</a></li>
-                                <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li>
+                                {% for button in carousel_item.buttons %}
+                                <li><a class="main-btn {% if forloop.first %}rounded-one{% else %}rounded-two{% endif %}" href="{{ button.link }}" target="_blank">{{ button.title }}</a></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
