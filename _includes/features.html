@@ -1,7 +1,10 @@
 
 <!--====== FEATRES TWO PART START ======-->
 
-<section id="services" class="features-area">
+{% assign feature_pages = site.pages | where:"feature",true %}
+{% assign feature_pages = feature_pages | sort: "order" %}
+
+<section id="features" class="features-area">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-10">
@@ -12,7 +15,7 @@
             </div>
         </div> <!-- row -->
         <div class="row justify-content-center">
-            {% for feature in site.features %}
+            {% for feature in feature_pages %}
             <div class="col-lg-4 col-md-7 col-sm-9">
                 <div class="single-features mt-40">
                     <div class="features-title-icon d-flex justify-content-between">
@@ -23,8 +26,8 @@
                         </div>
                     </div>
                     <div class="features-content">
-                        {{ feature.content | markdownify }}
-                        <a class="features-btn" href="#">LEARN MORE</a>
+                        {{ feature.description | markdownify }}
+                        <a class="features-btn" href="{{ feature.url | absolute_url }}">LEARN MORE</a>
                     </div>
                 </div> <!-- single features -->
             </div>

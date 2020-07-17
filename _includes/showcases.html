@@ -1,9 +1,9 @@
 
 <!--====== PORTFOLIO PART START ======-->
 
-{% assign showcase_post = site.posts | where:"showcase",true %}
+{% assign showcase_page = site.pages | where:"showcase",true %}
 
-<section id="portfolio" class="portfolio-area portfolio-four pb-100">
+<section id="showcases" class="portfolio-area portfolio-four pb-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-10">
@@ -31,7 +31,7 @@
             <div class="col-lg-9 col-md-9">
                 <div class="row no-gutters grid mt-50">
 
-                    {% for post in showcase_post %}
+                    {% for post in showcase_page %}
 
                     <div class="col-lg-4 col-sm-6 {% for tag in post.tags %} {{tag}}-tag{% endfor %}">
                         <div class="single-portfolio">

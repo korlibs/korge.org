@@ -1,0 +1,43 @@
+<div id="carouselThree" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for carousel_item in site.carousel %}
+        <li data-target="#carouselThree" data-slide-to="{{ forloop.index0 }}" class="{% if forloop.first %}active{% else %}{% endif %}"></li>
+        {% endfor %}
+    </ol>
+
+    <div class="carousel-inner">
+        {% for carousel_item in site.carousel %}
+        <div class="carousel-item {% if forloop.first %}active{% else %}{% endif %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="slider-content">
+                            <h1 class="title">Game Engine for Kotlin</h1>
+                            <p class="text">Modern Multiplatform Game Engine.</p>
+                            <ul class="slider-btn rounded-buttons">
+                                <li><a class="main-btn rounded-one" href="https://korlibs.soywiz.com/korge/setup/" target="_blank">GET STARTED</a></li>
+                                <li><a class="main-btn rounded-two" href="#">DOWNLOAD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+            <div class="slider-image-box d-none d-lg-flex align-items-end">
+                <div class="slider-image">
+                    <img src="assets/images/slider/1.png" alt="Hero">
+                </div> <!-- slider-imgae -->
+            </div> <!-- slider-imgae box -->
+        </div> <!-- carousel-item -->
+        {% endfor %}
+    </div>
+
+    {% assign carousel_size = site.carousel | size %}
+    {% if carousel_size >= 2 %}
+    <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev">
+        <i class="lni lni-arrow-left"></i>
+    </a>
+    <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next">
+        <i class="lni lni-arrow-right"></i>
+    </a>
+    {% endif %}
+</div>

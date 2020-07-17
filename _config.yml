@@ -31,7 +31,13 @@ plugins:
   - jekyll-feed
 
 collections:
-  features:
+  carousel:
+    sort_by: order
+  team:
+    sort_by: order
+  faq:
+    sort_by: order
+  testimonials:
     sort_by: order
 
 # Exclude from processing.

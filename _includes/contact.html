@@ -1,0 +1,38 @@
+
+<!--====== CONTACT PART START ======-->
+
+<section id="contact" class="contact-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-30">
+                    <h3 class="title">Contact</h3>
+                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        {% comment %} {% include google_maps.html %} {% endcomment %}
+        <div class="contact-info pt-30">
+            <div class="row">
+                {% for contact in site.data.contact %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-contact-info contact-color-{{ contact.color }} mt-30 d-flex ">
+                        <div class="contact-info-icon">
+                            <i class="{{ contact.icon }}"></i>
+                        </div>
+                        <div class="contact-info-content media-body">
+                            <p class="text">
+                                {{ contact.content | markdownify }}
+                            </p>
+                        </div>
+                    </div> <!-- single contact info -->
+                </div>
+                {% endfor %}
+
+            </div> <!-- row -->
+        </div> <!-- contact info -->
+        {% comment %} {% include contact_form.html %} {% endcomment %}
+    </div> <!-- container -->
+</section>
+
+<!--====== CONTACT PART ENDS ======-->
