@@ -1,0 +1,6 @@
+- title: Everything
+  filter: "*"
+- title: Puzzle
+  filter: ".puzzle"
+- title: Platformer
+  filter: ".platformer"

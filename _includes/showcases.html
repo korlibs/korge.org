@@ -1,0 +1,65 @@
+
+<!--====== PORTFOLIO PART START ======-->
+
+{% assign showcase_post = site.posts | where:"showcase",true %}
+
+<section id="portfolio" class="portfolio-area portfolio-four pb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-10">
+                    <h3 class="title">Featured Works</h3>
+                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="portfolio-menu text-center mt-50">
+                    <ul>
+                        {% for showcase_category in site.data.showcase_categories %}
+                        <li
+                            data-filter="{% if showcase_category.filter == '*' %}*{% else %}{{ showcase_category.filter }}-tag{% endif %}"
+                            class="{% if forloop.first == true %}active{% else %}{% endif %}"
+                        >
+                            {{ showcase_category.title }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div> <!-- portfolio menu -->
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="row no-gutters grid mt-50">
+
+                    {% for post in showcase_post %}
+
+                    <div class="col-lg-4 col-sm-6 {% for tag in post.tags %} {{tag}}-tag{% endfor %}">
+                        <div class="single-portfolio">
+                            <div class="portfolio-image">
+                                <img src="{{ post.icon | absolute_url }}" alt="">
+                                <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-icon">
+                                            <a class="image-popup" href="{{ post.image | absolute_url }}"><i class="lni lni-zoom-in"></i></a>
+                                            <img src="{{ 'assets/images/portfolio/shape.svg' | absolute_url }}" alt="shape" class="shape">
+                                        </div>
+                                        <div class="portfolio-icon">
+                                            <a href="{{ post.url }}"><i class="lni lni-link"></i></a>
+                                            <img src="{{ 'assets/images/portfolio/shape.svg' | absolute_url }}" alt="shape" class="shape">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- single portfolio -->
+                    </div>
+
+                    {% endfor %}
+
+
+                </div> <!-- row -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== PORTFOLIO PART ENDS ======-->

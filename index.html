@@ -1,238 +1,430 @@
 ---
-title: Korge Game Engine
-description: Modern Multiplatform Game Engine written in Kotlin
+layout: default
 ---
-<style type="text/css">
-#sample-preview {
-	width:100%;
-	border:1px solid #777;
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-	background: #2b2b2b;
-	min-height:408px;
-	height: 50vh;
-}
-#editor {
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-	width:100%;
-	min-height:408px;
-	height: 50vh;
-}
-</style>
 
-<section class="hero">
-	<div class="text-container" style="max-width: unset;">
-		<h1 class="editable">Modern Multiplatform Game Engine <strong>for Kotlin</strong></h1>
-		<p class="subtext editable">Write games for the JVM, JavaScript, Android and iOS in no time using Kotlin.</p>
-		<!--
-		<p style="background: #ffffc2;color:black;padding: 0.5em;">1st KorGE GameJAM 12-Jun ~ 14-Jun. 600€ in prizes - <a href="https://blog.korge.org/2020/05/korge-game-jam.html" target="_blank">Read more here</a></p>
-		-->
-		<div class="cta">
-			<div>
-				<div class="button alt" style="display: inline-block">
-					<a href="https://github.com/korlibs/korge-hello-world/archive/master.zip" style="display:inline-block">
-						<i class="fas fa-download"></i> Download Template
-					</a>
-				</div>
-				<div class="button alt" style="display: inline-block">
-					<a href="https://korlibs.soywiz.com/korge/setup/intellij-plugin/" target="_blank" style="display:inline-block">
-						<i class="fas fa-rocket"></i> Setup IntelliJ plugin
-					</a>
-				</div>
-			</div>
+{% include features.html %}
 
-			<div style="margin-top: 1em;">
-				<!-- Place this tag where you want the button to render. -->
-				<a class="github-button" href="https://github.com/korlibs/korge" data-size="large" data-show-count="true" aria-label="Star korlibs/korge on GitHub">Star</a>
-				<!-- Place this tag in your head or just before your close body tag. -->
-				<script async defer src="https://buttons.github.io/buttons.js"></script>
-			</div>
-		</div>
-		<div>
-			<div class="flex">
-				<div class="text editable">
-					<iframe id="sample-preview" src="about:blank"></iframe>
-				</div>
-				<div class="text editable" style="text-align:left !important;">
-					<div id="editor"></div>
-				</div>
-			</div>
-			<a id="sample-link" href="about:blank" target="_blank">Sample</a>
-			<div class="container flex">
-				<nav id="samples">
-					<a href="javascript:void(0)" data-sample="korge-hello-world" class="active">Hello World</a>
-					<a href="javascript:void(0)" data-sample="korge-3d" class="">3D</a>
-					<a href="javascript:void(0)" data-sample="korge-filters" class="">Filters</a>
-					<a href="javascript:void(0)" data-sample="korge-dragonbones" class="">DragonBones</a>
-					<a href="javascript:void(0)" data-sample="korge-input" class="">Input</a>
-					<a href="javascript:void(0)" data-sample="korge-box2d" class="">Box2d</a>
-					<a href="javascript:void(0)" data-sample="korge-particles" class="">Particles</a>
-					<a href="javascript:void(0)" data-sample="korge-lipsync" class="">LipSync</a>
-					<a href="javascript:void(0)" data-sample="korge-bitmap-font" class="">Bitmap Fonts</a>
-					<a href="javascript:void(0)" data-sample="korge-touch-controller" class="">Touch Controller</a>
-					<a href="javascript:void(0)" data-sample="korge-swf" class="">Tic Tac Toe (SWF)</a>
-				</nav>
-			</div>
-			<script src="/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-			<script>
-				var editor = ace.edit("editor");
-				var Range = ace.require("ace/range").Range;
-				editor.renderer.setOption('showLineNumbers', false);
-				editor.setTheme("ace/theme/solarized_dark");
-				editor.session.setMode("ace/mode/kotlin");
-				editor.setReadOnly(true);
+{% include showcases.html %}
 
-				async function setSample(name) {
-					$('#sample-link').text(`/samples/${name}/index.html`);
-					$('#sample-link').attr('href', `/samples/${name}/index.html`);
-					$('#sample-preview').attr('src', `/samples/${name}/index.html`);
-					let req = await fetch(`/samples/${name}.kt`);
-					let text = await req.text();
-					editor.setValue(text, 1);
-					let lines = text.split("\n");
-					let foldNumber = 0;
-					var nimports = 0;
-					for (let n = 0; n < lines.length; n++) {
-						let line = lines[n].trim();
-						if (line.startsWith('import')) {
-							nimports++;
-							continue;
-						} else if (line.startsWith('package')) {
-							continue;
-						} else if (line == '') {
-							if (nimports > 0) {
-								foldNumber = n;
-								break;
-							}
-							continue;
-						} else {
-							foldNumber = n;
-							break;
-						}
-					}
-					editor.session.addFold("Imports", new Range(0, 0, foldNumber, 0))
-				}
+<!--====== ABOUT PART START ======-->
 
-				setSample("korge-hello-world");
+<section id="about" class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="faq-content mt-45">
+                    <div class="about-title">
+                        <h6 class="sub-title">A Little More About Us</h6>
+                        <h4 class="title">Frequently Asked Questions <br> About Our Site</h4>
+                    </div> <!-- faq title -->
+                    <div class="about-accordion">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Frequently Asked Question One</a>
+                                </div>
 
-				document.addEventListener('touchstart', {});
-
-				let sampleLinks = document.querySelectorAll('a[data-sample]');
-				sampleLinks.forEach((link) => {
-					link.onclick = () => {
-						for (let sampleLink of sampleLinks) {
-							$(sampleLink).removeClass('active')
-						}
-						$(link).addClass('active')
-						let sample = $(link).data('sample');
-						setSample(sample);
-					};
-				});
-			</script>
-		</div>
-	</div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
+                                    </div>
+                                </div>
+                            </div> <!-- card -->
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Frequently Asked Question Two</a>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
+                                    </div>
+                                </div>
+                            </div> <!-- card -->
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Frequently Asked Question Three</a>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
+                                    </div>
+                                </div>
+                            </div> <!-- card -->
+                            <div class="card">
+                                <div class="card-header" id="headingFore">
+                                    <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">Frequently Asked Question Four</a>
+                                </div>
+                                <div id="collapseFore" class="collapse" aria-labelledby="headingFore" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
+                                    </div>
+                                </div>
+                            </div> <!-- card -->
+                            <div class="card">
+                                <div class="card-header" id="headingFive">
+                                    <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Frequently Asked Question Five</a>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
+                                    </div>
+                                </div>
+                            </div> <!-- card -->
+                        </div>
+                    </div> <!-- faq accordion -->
+                </div> <!-- faq content -->
+            </div>
+            <div class="col-lg-7">
+                <div class="about-image mt-50">
+                    <img src="assets/images/about.jpg" alt="about">
+                </div> <!-- faq image -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
 </section>
 
-<div class="content">
-	<section>
-		<div class="container flex">
-			<a class="twitter-timeline" data-width="512" data-max-width="100%" data-height="400" data-max-height="100vh" href="https://twitter.com/KorgeGameEngine?ref_src=twsrc%5Etfw">Tweets by KorgeGameEngine</a>
-			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-		</div>
-	</section>
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2>Real <strong>native</strong> multiplatform</h2>
-				<p>KorGE is fully written in Kotlin. KorGE gradle plugin allows to target each platform natively: JVM for Android, JS for the Web and Native code for iOS and Desktop.</p>
-			</div>
-			<div class="image">
-				<img src="/images/multiplatform.svg" alt="Screenshot" class="screenshot editable" />
-			</div>
-		</div>
-	</section>
+<!--====== ABOUT PART ENDS ======-->
 
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2>Small <strong>footprint</strong></h2>
-				<p>
-					KorGE has a very small footprint. It has no external dependencies
-					and only uses the libraries available on each platform.
-					You can create small native games or games for the web,
-					that are fast to download and require almost no space to store.
-				</p>
-				<p>
-					The JS sample of this page is just 383 KB gzipped (<em>1.9 MB uncompressed</em>).
-					No emscripten. Just plain JS generated using Kotlin/JS.
-				</p>
-			</div>
-			<div class="image">
-				<img src="/images/small.svg" alt="Screenshot" class="screenshot editable" />
-			</div>
-		</div>
-	</section>
+<!--====== TESTIMONIAL PART START ======-->
 
-	<section>
-		<div class="container flex">
-			<div class="text editable">
-				<h2>Iterate <strong>fast</strong>, develop with pleasure</h2>
-				<p>
-					Since KorGE targets the JVM, you can develop your game,
-					try it, debug it and test it using IntelliJ IDEA (<em>including Community, Ultimate and Android Studio</em>) integrated
-					debugger. And then deploy to the other targets by using the
-					provided gradle tasks.
-				</p>
-				<p>
-					You can also use KorGE as a library and for example integrated
-					it in your android-only project.
-				</p>
-			</div>
-			<div class="image">
-				<img src="/images/idea.png" alt="Screenshot" class="screenshot editable" />
-			</div>
-		</div>
-	</section>
+<section id="testimonial" class="testimonial-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-xl-5 col-lg-6">
+                <div class="testimonial-left-content mt-45">
+                    <h6 class="sub-title">Testimonials</h6>
+                    <h4 class="title">What Clients Says <br> About Us</h4>
+                    <ul class="testimonial-line">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <p class="text">Duis et metus et massa tempus lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas ultricies, orci molestie blandit interdum. <br> <br> ipsum ante pellentesque nisl, eget mollis turpis quam nec eros. ultricies, orci molestie blandit interdum.</p>
+                </div> <!-- testimonial left content -->
+            </div>
+            <div class="col-lg-6">
+                <div class="testimonial-right-content mt-50">
+                    <div class="quota">
+                        <i class="lni lni-quotation"></i>
+                    </div>
+                    <div class="testimonial-content-wrapper testimonial-active">
+                        <div class="single-testimonial">
+                            <div class="testimonial-text">
+                                <p class="text">“Praesent scelerisque, odio eu fermentum malesuada, nisi arcu volutpat nisl, sit amet convallis nunc turp.”</p>
+                            </div>
+                            <div class="testimonial-author d-sm-flex justify-content-between">
+                                <div class="author-info d-flex align-items-center">
+                                    <div class="author-image">
+                                        <img src="assets/images/author-1.jpg" alt="author">
+                                    </div>
+                                    <div class="author-name media-body">
+                                        <h5 class="name">Mr. Jems Bond</h5>
+                                        <span class="sub-title">CEO Mbuild Firm</span>
+                                    </div>
+                                </div>
+                                <div class="author-review">
+                                    <ul class="star">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                    </ul>
+                                    <span class="review">( 7 Reviews )</span>
+                                </div>
+                            </div>
+                        </div> <!-- single testimonial -->
+                        <div class="single-testimonial">
+                            <div class="testimonial-text">
+                                <p class="text">“Praesent scelerisque, odio eu fermentum malesuada, nisi arcu volutpat nisl, sit amet convallis nunc turp.”</p>
+                            </div>
+                            <div class="testimonial-author d-sm-flex justify-content-between">
+                                <div class="author-info d-flex align-items-center">
+                                    <div class="author-image">
+                                        <img src="assets/images/author-2.jpg" alt="author">
+                                    </div>
+                                    <div class="author-name media-body">
+                                        <h5 class="name">Mr. Jems Bond</h5>
+                                        <span class="sub-title">CEO Mbuild Firm</span>
+                                    </div>
+                                </div>
+                                <div class="author-review">
+                                    <ul class="star">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                    </ul>
+                                    <span class="review">( 7 Reviews )</span>
+                                </div>
+                            </div>
+                        </div> <!-- single testimonial -->
+                        <div class="single-testimonial">
+                            <div class="testimonial-text">
+                                <p class="text">“Praesent scelerisque, odio eu fermentum malesuada, nisi arcu volutpat nisl, sit amet convallis nunc turp.”</p>
+                            </div>
+                            <div class="testimonial-author d-sm-flex justify-content-between">
+                                <div class="author-info d-flex align-items-center">
+                                    <div class="author-image">
+                                        <img src="assets/images/author-3.jpg" alt="author">
+                                    </div>
+                                    <div class="author-name media-body">
+                                        <h5 class="name">Mr. Jems Bond</h5>
+                                        <span class="sub-title">CEO Mbuild Firm</span>
+                                    </div>
+                                </div>
+                                <div class="author-review">
+                                    <ul class="star">
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                        <li><i class="lni lni-star-filled"></i></li>
+                                    </ul>
+                                    <span class="review">( 7 Reviews )</span>
+                                </div>
+                            </div>
+                        </div> <!-- single testimonial -->
+                    </div> <!-- testimonial content wrapper -->
+                </div> <!-- testimonial right content -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
 
-	<section>
-			<div class="container flex">
-				<div class="text editable">
-					<h2>Tons of <strong>features</strong> out of the box</h2>
-					<p>
-						KorGE is just the last layer of a larger stack (Korlibs) for multimedia development:
-					</p>
-					<p>
-						Date and Time utilities, Image Loading, Vector Rasterization, Pathfinding, Sound, Data Structures, Fast Memory Access,
-						Virtual File Systems, WebSockets...	
-					</p>
-					<p>
-						Also, it is extensible and include several plugins out of the box:
-						DragonBones, Box2D, SWF and Admob. And more coming.
-					</p>
-				</div>
-				<div class="image">
-					<img src="/images/libraries/libraries.png" alt="Screenshot" class="screenshot editable" />
-				</div>
-			</div>
-		</section>
-	
-	<section class="testimonial">
-		<div class="container flex">
-			<div class="testimonial-block">
-				<div class="square-image"><img src="https://avatars2.githubusercontent.com/u/570848?s=460&v=4" alt="Carlos Ballesteros" class="editable" style="width:inherit;"></div>
-				<blockquote>
-					<p class="editable">KorGE is the result of two years of intense development. It is totally free and OpenSource. Hope you all enjoy it.</p>
-					<p class="editable author">Carlos Ballesteros Velasco (soywiz) - Creator of KorGE</p>
-				</blockquote>
-			</div>
-		</div>
-	</section>
+<!--====== TESTIMONIAL PART ENDS ======-->
 
-	<section class="bottom-cta">
-		<h2 class="editable"><strong>Try</strong> KorGE today</h2>
-		<div class="button alt">
-			<a href="https://github.com/korlibs/korge-hello-world/archive/master.zip">
-				<i class="fas fa-download"></i> Download Project Template
-			</a>
-		</div>
-	</section>
-</div>
+<!--====== TEAM START ======-->
+
+<section id="team" class="team-area pt-120 pb-130">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-30">
+                    <h3 class="title">Meet The Team</h3>
+                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="team-image">
+                        <img src="assets/images/team-1.jpg" alt="Team">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-social">
+                            <ul class="social">
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <h4 class="team-name"><a href="#">Jeffery Riley</a></h4>
+                        <span class="sub-title">Art Director</span>
+                    </div>
+                </div> <!-- single team -->
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="team-image">
+                        <img src="assets/images/team-2.jpg" alt="Team">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-social">
+                            <ul class="social">
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <h4 class="team-name"><a href="#">Riley Beata</a></h4>
+                        <span class="sub-title">Web Developer</span>
+                    </div>
+                </div> <!-- single team -->
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="team-image">
+                        <img src="assets/images/team-3.jpg" alt="Team">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-social">
+                            <ul class="social">
+                                <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <h4 class="team-name"><a href="#">Mark A. Parker</a></h4>
+                        <span class="sub-title">UX Designer</span>
+                    </div>
+                </div> <!-- single team -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== TEAM  ENDS ======-->
+
+<!--====== CONTACT PART START ======-->
+
+<section id="contact" class="contact-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-30">
+                    <h3 class="title">Contact</h3>
+                    <p class="text">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+                </div> <!-- section title -->
+            </div>
+        </div> <!-- row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-map mt-30">
+                    <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                </div> <!-- row -->
+            </div>
+        </div> <!-- row -->
+        <div class="contact-info pt-30">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-contact-info contact-color-1 mt-30 d-flex ">
+                        <div class="contact-info-icon">
+                            <i class="lni lni-map-marker"></i>
+                        </div>
+                        <div class="contact-info-content media-body">
+                            <p class="text"> Elizabeth St, Melbourne<br>1202 Australia.</p>
+                        </div>
+                    </div> <!-- single contact info -->
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-contact-info contact-color-2 mt-30 d-flex ">
+                        <div class="contact-info-icon">
+                            <i class="lni lni-envelope"></i>
+                        </div>
+                        <div class="contact-info-content media-body">
+                            <p class="text">hello@ayroui.com</p>
+                            <p class="text">support@uideck.com</p>
+                        </div>
+                    </div> <!-- single contact info -->
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-contact-info contact-color-3 mt-30 d-flex ">
+                        <div class="contact-info-icon">
+                            <i class="lni lni-phone"></i>
+                        </div>
+                        <div class="contact-info-content media-body">
+                            <p class="text">+333 789-321-654</p>
+                            <p class="text">+333 985-458-609</p>
+                        </div>
+                    </div> <!-- single contact info -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- contact info -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact-wrapper form-style-two pt-115">
+                    <h4 class="contact-title pb-10"><i class="lni lni-envelope"></i> Leave <span>A Message.</span></h4>
+
+                    <form id="contact-form" action="assets/contact.php" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Name</label>
+                                    <div class="input-items default">
+                                        <input name="name" type="text" placeholder="Name">
+                                        <i class="lni lni-user"></i>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-input mt-25">
+                                    <label>Email</label>
+                                    <div class="input-items default">
+                                        <input type="email" name="email" placeholder="Email">
+                                        <i class="lni lni-envelope"></i>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-input mt-25">
+                                    <label>Massage</label>
+                                    <div class="input-items default">
+                                        <textarea name="massage" placeholder="Massage"></textarea>
+                                        <i class="lni lni-pencil-alt"></i>
+                                    </div>
+                                </div> <!-- form input -->
+                            </div>
+                            <p class="form-message"></p>
+                            <div class="col-md-12">
+                                <div class="form-input light-rounded-buttons mt-30">
+                                    <button class="main-btn light-rounded-two">Send Message</button>
+                                </div> <!-- form input -->
+                            </div>
+                        </div> <!-- row -->
+                    </form>
+                </div> <!-- contact wrapper form -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== CONTACT PART ENDS ======-->
+
+<!--====== FOOTER PART START ======-->
+
+<section class="footer-area footer-dark">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="footer-logo text-center">
+                    <a class="mt-30" href="index.html"><img src="assets/images/logo.svg" alt="Logo"></a>
+                </div> <!-- footer logo -->
+                <ul class="social text-center mt-60">
+                    <li><a href="https://facebook.com/uideckHQ"><i class="lni lni-facebook-filled"></i></a></li>
+                    <li><a href="https://twitter.com/uideckHQ"><i class="lni lni-twitter-original"></i></a></li>
+                    <li><a href="https://instagram.com/uideckHQ"><i class="lni lni-instagram-original"></i></a></li>
+                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
+                </ul> <!-- social -->
+                <div class="footer-support text-center">
+                    <span class="number">+8801234567890</span>
+                    <span class="mail">support@uideck.com</span>
+                </div>
+                <div class="copyright text-center mt-35">
+                    <p class="text">Designed by <a href="https://uideck.com" rel="nofollow">UIdeck</a> and Built-with <a rel="nofollow" href="https://ayroui.com">Ayro UI</a> </p>
+                </div> <!--  copyright -->
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+<!--====== FOOTER PART ENDS ======-->
+
+<!--====== BACK TOP TOP PART START ======-->
+
+<a href="#" class="back-to-top"><i class="lni lni-chevron-up"></i></a>
+
+<!--====== BACK TOP TOP PART ENDS ======-->
+
+<!--====== PART START ======-->
+
+<!--
+    <section class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-">
+
+                </div>
+            </div>
+        </div>
+    </section>
+-->
+
+<!--====== PART ENDS ======-->
+

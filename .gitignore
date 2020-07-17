@@ -1,5 +1,3 @@
-/.gradle
-/_site
 /.sass-cache
 /.idea
-/.jekyll-cache
+/_site
