@@ -1,7 +1,8 @@
 ---
 layout: showcase
 title: "Parasite"
-permalink: https://blog.korge.org/winners-of-1st-korge-gamejam/
+permalink: #
+targetLink: https://blog.korge.org/winners-of-1st-korge-gamejam/
 date: 2020-07-17 12:20:32 +0200
 icon: /assets/images/portfolio/parasite.png
 image: /assets/images/portfolio/parasite.png
