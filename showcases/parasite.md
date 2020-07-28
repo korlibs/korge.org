@@ -2,7 +2,7 @@
 layout: showcase
 title: "Parasite"
 permalink: #
-targetLink: https://blog.korge.org/winners-of-1st-korge-gamejam/
+targetLink: https://idcp.itch.io/parasite
 date: 2020-07-17 12:20:32 +0200
 icon: /assets/images/portfolio/parasite.png
 image: /assets/images/portfolio/parasite.png
