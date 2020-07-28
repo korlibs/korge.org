@@ -11,8 +11,51 @@ buttons:
 
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/korlibs/korge" data-size="large" data-show-count="true" aria-label="Star korlibs/korge on GitHub">Star</a>
+
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-<p class="text">Modern Multiplatform Game Engine for Kotlin.</p>
+<p class="text">Modern Multiplatform Game Engine for Kotlin.<br />
+					Latest version: <span id="version"></span></p>
+
+					<script type="text/javascript">
+						const versionVersion = "V1"
+						const versionTimeLocalStorageKey = `versionCacheTime${versionVersion}`;
+						const versionLocalStorageKey = `version${versionVersion}`;
+
+						function updateVersion() {
+							let version = localStorage.getItem(versionLocalStorageKey);
+							let rversion = (version == 'vundefined' || version == 'undefined') ? 'v1.5.6.2' : (version || 'v1.5.6.2');
+							document.getElementById('version').innerText = `${rversion}`;
+						}
+
+						updateVersion();
+
+						async function fetchJson(url) {
+							let data = await fetch(url);
+							let json = await data.json();
+							return json;
+						}
+
+						async function doDynamic() {
+							let versionCacheTime = localStorage.getItem(versionTimeLocalStorageKey);
+							if (!versionCacheTime || ((Date.now() - versionCacheTime) > 24 * 3600 * 1000)) {
+
+								try {
+									let data = await fetchJson("https://korlibs-api.soywiz.com/versions/korge-plugins");
+									console.log(data);
+									localStorage.setItem(versionTimeLocalStorageKey, Date.now());
+									localStorage.setItem(versionLocalStorageKey, 'v' + data.version.replace(/^release-/, ''));
+									updateVersion();
+								} catch (e) {
+									let data = await fetchJson("https://api.github.com/repos/korlibs/korge-plugins/releases/latest");
+									console.log(data);
+									localStorage.setItem(versionTimeLocalStorageKey, Date.now());
+									localStorage.setItem(versionLocalStorageKey, 'v' + data.tag_name.replace(/^release-/, ''));
+									updateVersion();
+								}
+							}
+						}
+						doDynamic();
+					</script>
 
