@@ -4,3 +4,7 @@
   filter: ".puzzle"
 - title: Platformer
   filter: ".platformer"
+- title: RPG
+  filter: ".rpg"
+- title: ARCADE
+  filter: ".arcade"
