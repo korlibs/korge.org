@@ -7,8 +7,8 @@ permalink: /features/native
 order: 0
 icon: lni-brush
 description: |
-  KorGE is fully written in Kotlin. KorGE gradle plugin allows to target each platform natively:
-  JVM for Android, JS for the Web and Native code for iOS and Desktop.
+  KorGE gradle plugin allows to target each platform natively:
+  JVM for Android, JS for the Web and native code for iOS and Desktop.
 ---
 
 KorGE is fully written in Kotlin. KorGE gradle plugin allows to target each platform natively:

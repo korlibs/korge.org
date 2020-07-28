@@ -27,7 +27,9 @@
                     </div>
                     <div class="features-content">
                         {{ feature.description | markdownify }}
+                        {% if feature.permalink != nil %}
                         <a class="features-btn" href="{{ feature.url | absolute_url }}">LEARN MORE</a>
+                        {% endif %}
                     </div>
                 </div> <!-- single features -->
             </div>

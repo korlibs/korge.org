@@ -1,6 +1,6 @@
 ---
 layout: feature
-title: Tons of <strong>features</strong> out of the box
+title: Tons of <strong>features</strong>
 title_menu: Features
 feature: true
 permalink: /features/fully-featured
