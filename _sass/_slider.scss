@@ -12,11 +12,12 @@
 }
 
 .carousel-item {
-    background-color: $primary-one;
+    # background-color: $primary-one;
+    background-image: url("../../assets/images/slider/galaxy_background.svg");
     position: relative;
 
     &::before {
-        position: absolute;
+        /* position: absolute;
         content: '';
         width: 33%;
         height: 100%;
@@ -25,7 +26,7 @@
         background: linear-gradient($slider-gradient-color1 0%, $slider-gradient-color2 100%);
         top: 0;
         right: 15%;
-        @include transform(skewX(20deg));
+         @include transform(skewX(20deg)); */
 
         @media #{$lg} {
             width: 40%;
