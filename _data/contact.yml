@@ -1,20 +1,24 @@
 - content: |
     [Forum](https://forum.korge.org/)
-
-    [Stackoverflow](https://stackoverflow.com/questions/tagged/korge)
-  icon: lni lni-map-marker
+  icon: lni lni-comments
   color: 1
 - content: |
-    [Slack](https://slack.korge.org/)
-
-    [Discord](https://discord.gg/jKCxCHn)
-  icon: lni lni-map-marker
+    [Stackoverflow](https://stackoverflow.com/questions/tagged/korge)
+  icon: lni lni-stackoverflow
   color: 2
 - content: |
-    [Youtube](https://korge.youtube.org)
-  icon: lni lni-map-marker
+    [Discord](https://discord.gg/jKCxCHn)
+  icon: lni lni-discord
+  color: 4
+- content: |
+    [Slack](https://slack.korge.org/)
+  icon: lni lni-slack
   color: 3
+- content: |
+    [Youtube](https://korge.youtube.org)
+  icon: lni lni-youtube
+  color: 2
 - content: |
     [info@korge.org](mailto:info@korge.org)
   icon: lni lni-envelope
-  color: 4
+  color: 1
