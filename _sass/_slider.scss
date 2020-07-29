@@ -13,8 +13,11 @@
 
 .carousel-item {
     # background-color: $primary-one;
-    background-image: url("../../assets/images/slider/galaxy_background.svg");
+    background-image: url($background_slider);
+    background-repeat: repeat-x;
+    background-size: 2800px;
     position: relative;
+
 
     &::before {
         /* position: absolute;
