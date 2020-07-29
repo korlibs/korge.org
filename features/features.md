@@ -5,7 +5,7 @@ title_menu: Features
 feature: true
 permalink: /features/fully-featured
 order: 5
-icon: lni-layout
+icon: lni-fireworks
 description: |
     KorGE is just the last layer of a larger stack (Korlibs)
     for multimedia development.

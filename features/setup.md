@@ -5,7 +5,7 @@ title_menu: Small
 feature: true
 permalink: /features/quicksetup
 order: 1
-icon: lni-layout
+icon: lni-timer
 description: |
   Install the KorGE IntelliJ Plugin or clone the "Hello World!" project and start making your own game in less than a minute.
 ---

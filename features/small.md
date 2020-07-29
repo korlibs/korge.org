@@ -5,7 +5,7 @@ title_menu: Small
 feature: true
 permalink: /features/small
 order: 1
-icon: lni-layout
+icon: lni-magnifier
 description: |
   KorGE has a very small footprint. It has no external dependencies
   and only uses the libraries available on each platform. 
