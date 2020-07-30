@@ -50,3 +50,43 @@
 </section>
 
 <!--====== SLIDER PART ENDS ======-->
+<script type="text/javascript">
+                        const versionVersion = "V1"
+                        const versionTimeLocalStorageKey = `versionCacheTime${versionVersion}`;
+                        const versionLocalStorageKey = `version${versionVersion}`;
+
+                        function updateVersion() {
+                            let version = localStorage.getItem(versionLocalStorageKey);
+                            let rversion = (version == 'vundefined' || version == 'undefined') ? 'v1.5.6.2' : (version || 'v1.5.6.2');
+                            document.getElementById('version').innerText = `${rversion}`;
+                        }
+
+                        updateVersion();
+
+                        async function fetchJson(url) {
+                            let data = await fetch(url);
+                            let json = await data.json();
+                            return json;
+                        }
+
+                        async function doDynamic() {
+                            let versionCacheTime = localStorage.getItem(versionTimeLocalStorageKey);
+                            if (!versionCacheTime || ((Date.now() - versionCacheTime) > 24 * 3600 * 1000)) {
+
+                                try {
+                                    let data = await fetchJson("https://korlibs-api.soywiz.com/versions/korge-plugins");
+                                    console.log(data);
+                                    localStorage.setItem(versionTimeLocalStorageKey, Date.now());
+                                    localStorage.setItem(versionLocalStorageKey, 'v' + data.version.replace(/^release-/, ''));
+                                    updateVersion();
+                                } catch (e) {
+                                    let data = await fetchJson("https://api.github.com/repos/korlibs/korge-plugins/releases/latest");
+                                    console.log(data);
+                                    localStorage.setItem(versionTimeLocalStorageKey, Date.now());
+                                    localStorage.setItem(versionLocalStorageKey, 'v' + data.tag_name.replace(/^release-/, ''));
+                                    updateVersion();
+                                }
+                            }
+                        }
+                        doDynamic();
+                    </script>
