@@ -22,12 +22,12 @@
        rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
          rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><sodipodi:namedview
    inkscape:current-layer="g1375"
-   inkscape:window-maximized="0"
+   inkscape:window-maximized="1"
    inkscape:window-y="0"
    inkscape:window-x="4920"
-   inkscape:cy="585.15153"
-   inkscape:cx="2734.6883"
-   inkscape:zoom="0.53433333"
+   inkscape:cy="688.42946"
+   inkscape:cx="1530.6275"
+   inkscape:zoom="1.5113229"
    showgrid="false"
    id="namedview2483"
    inkscape:window-height="2123"
@@ -39,7 +39,8 @@
    objecttolerance="10"
    borderopacity="1"
    bordercolor="#666666"
-   pagecolor="#ffffff" />
+   pagecolor="#ffffff"
+   inkscape:document-rotation="0" />
     <g
    id="g1375"
    transform="matrix(-0.99999,0.00443234,-0.00443234,-0.99999,2948.7,744.815)">
@@ -2067,7 +2068,7 @@
         </g>
         <g
    id="g805"
-   transform="translate(255.17792,346.94108)">
+   transform="translate(856.10707,342.02708)">
             <g
    serif:id="Capa12"
    id="Capa122">
@@ -2127,7 +2128,7 @@
         </g>
         <g
    id="g832"
-   transform="matrix(1.35274,0.392106,-0.392106,1.35274,262.24641,-710.5174)">
+   transform="matrix(1.35274,0.392106,-0.392106,1.35274,857.71725,-645.93883)">
             <g
    serif:id="Capa12"
    id="Capa123">
@@ -2187,7 +2188,7 @@
         </g>
         <g
    id="g859"
-   transform="matrix(-0.434797,-0.294269,0.294269,-0.434797,845.21455,971.85354)">
+   transform="matrix(-0.434797,-0.294269,0.294269,-0.434797,1783.8228,733.8683)">
             <g
    serif:id="Capa12"
    id="Capa124">
