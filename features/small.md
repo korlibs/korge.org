@@ -4,7 +4,7 @@ title: Small <strong>footprint</strong>
 title_menu: Small
 feature: true
 permalink: /features/small
-order: 1
+order: 5
 icon: lni-magnifier
 description: |
   KorGE has a very small footprint. It has no external dependencies
