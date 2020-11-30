@@ -4,7 +4,7 @@ title: Real <strong>native</strong> multiplatform
 title_menu: Native
 feature: true
 permalink: /features/native
-order: 0
+order: 1
 icon: lni-laptop-phone
 description: |
   KorGE gradle plugin allows to target each platform natively:
