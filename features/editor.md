@@ -1,6 +1,6 @@
 ---
 layout: feature
-title: Graphical <strong>editor</strong>
+title: Visual <strong>editor</strong>
 title_menu: editor
 feature: true
 permalink: /features/editor
