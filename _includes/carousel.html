@@ -23,6 +23,9 @@
                                 <li><a class="main-btn {% if forloop.first %}rounded-one{% else %}rounded-two{% endif %}" href="{{ button.link }}" target="_blank">{{ button.title }}</a></li>
                                 {% endfor %}
                             </ul>
+                            {% for ex in carousel_item.extra %}
+                                {{ ex }}
+                            {% endfor %}
                         </div>
                     </div>
                 </div> <!-- row -->
