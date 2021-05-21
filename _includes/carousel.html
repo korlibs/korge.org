@@ -59,9 +59,11 @@
                         const versionLocalStorageKey = `version${versionVersion}`;
 
                         function updateVersion() {
-                            let version = localStorage.getItem(versionLocalStorageKey);
-                            let rversion = (version == 'vundefined' || version == 'undefined') ? 'v1.5.6.2' : (version || 'v1.5.6.2');
-                            document.getElementById('version').innerText = `${rversion}`;
+                            let version = localStorage.getItem(versionLocalStorageKey).replace(/^v/, '');
+                            const lastKnownVersion = 'v2.0.0.2'
+                            let rversion = (version == 'vundefined' || version == 'undefined') ? lastKnownVersion : (version || lastKnownVersion);
+                            rversion = `${rversion}`.replace(/^v/, '');
+                            document.getElementById('version').innerText = `v${rversion}`;
                         }
 
                         updateVersion();
