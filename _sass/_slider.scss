@@ -13,7 +13,7 @@
 
 .carousel-item {
     # background-color: $primary-one;
-    background-image: #fff;
+    background-image: url($background_slider);
     background-repeat: repeat-x;
     background-size: 3000px;
     position: relative;
