@@ -54,14 +54,14 @@
 
 <!--====== SLIDER PART ENDS ======-->
 <script type="text/javascript">
-	const versionVersion = "V2"
+	const versionVersion = "V3"
 	const versionTimeLocalStorageKey = `versionCacheTime${versionVersion}`;
 	const versionLocalStorageKey = `version${versionVersion}`;
 
 	function updateVersion() {
-		let version = localStorage.getItem(versionLocalStorageKey).replace(/^v/, '');
+		let version = (localStorage.getItem(versionLocalStorageKey) || '').replace(/^v/, '');
 		const lastKnownVersion = 'v2.4.0'
-		let rversion = (version == 'vundefined' || version == 'undefined') ? lastKnownVersion : (version || lastKnownVersion);
+		let rversion = (version === 'vundefined' || version === 'undefined' || version === '') ? lastKnownVersion : (version || lastKnownVersion);
 		rversion = `${rversion}`.replace(/^v/, '');
 		document.getElementById('version').innerText = `v${rversion}`;
 	}
@@ -81,7 +81,7 @@
 			let data = await fetchJson("https://api.github.com/repos/korlibs/korge-next/releases/latest");
 			console.log(data);
 			localStorage.setItem(versionTimeLocalStorageKey, Date.now());
-			localStorage.setItem(versionLocalStorageKey, 'v' + data.tag_name.replace(/^(release|v)-/, ''));
+			localStorage.setItem(versionLocalStorageKey, 'v' + data.tag_name.replace(/^(release-|v)/, ''));
 			updateVersion();
 		}
 	}
