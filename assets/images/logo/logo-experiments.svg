@@ -1,0 +1,101 @@
+<svg
+    width="512" height="512"
+    viewBox="0 0 1024 1024"
+    xmlns="http://www.w3.org/2000/svg"
+    style="stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:1.5; fill:none; stroke:none;"
+>
+    <g transform="translate(0, 0)">
+        <!-- SHADOW -->
+        <g style="stroke:black;fill:black;" transform="translate(15,15)">
+            <path d="M-120,120L120,-120Z M0,0L30,190Z M0,0L190,15Z" style="stroke-width:90px;" transform="translate(256, 256)"/>
+            <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke-width:60px;" transform="translate(120, 200) rotate(-30)"/>
+            <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke-width:60px;" transform="translate(240, 100) rotate(-10)"/>
+        </g>
+
+        <!-- WHITE OUTLINE -->
+        <g style="stroke:white;fill:white;stroke-width:60px;">
+            <path transform="translate(256, 256)" d="M-120,120L120,-120Z M0,0L30,190Z M0,0L190,15Z" style="fill:none;stroke-width:90px;"/>
+            <ellipse transform="translate(120, 200) rotate(-30)" cx="0" cy="0" rx="38" ry="70" />
+            <ellipse transform="translate(240, 100) rotate(-10)" cx="0" cy="0" rx="38" ry="70" />
+        </g>
+
+        <!-- BODY -->
+        <g transform="translate(256, 256)" style="stroke-width:50px;">
+            <path d="M-120,120L120,-120Z" style="stroke:#5800C3;"/>
+            <path d="M0,0L30,190Z M0,0L190,15Z" style="stroke:#47009C;"/>
+        </g>
+        <!-- EYES -->
+        <g style="stroke-width:30px;">
+            <g transform="translate(120, 200) rotate(-30)">
+                <ellipse cx="-17" cy="0" rx="24" ry="24" style="fill:#5800C3;"/>
+                <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke:#47009C;"/>
+            </g>
+            <g transform="translate(240, 100) rotate(-10)">
+                <ellipse cx="-19" cy="12" rx="24" ry="24" style="fill:#5800C3;"/>
+                <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke:#47009C;"/>
+            </g>
+        </g>
+    </g>
+    <g transform="translate(512, 0)">
+        <!-- SHADOW -->
+        <g style="stroke:black;fill:black;" transform="translate(15,15)">
+            <path d="M-120,120L120,-120Z M0,0L30,190Z M0,0L190,15Z" style="stroke-width:90px;" transform="translate(256, 256)"/>
+            <ellipse cx="0" cy="0" rx="60" ry="60" style="stroke-width:60px;" transform="translate(110, 220) rotate(-30)"/>
+            <ellipse cx="0" cy="0" rx="60" ry="60" style="stroke-width:60px;" transform="translate(240, 100) rotate(-10)"/>
+        </g>
+
+        <!-- WHITE OUTLINE -->
+        <g style="stroke:white;fill:white;stroke-width:70px;">
+            <path transform="translate(256, 256)" d="M-120,120L120,-120Z M0,0L30,190Z M0,0L190,15Z" style="fill:none;stroke-width:90px;"/>
+            <ellipse transform="translate(100, 220) rotate(-30)" cx="0" cy="0" rx="60" ry="60" />
+            <ellipse transform="translate(240, 100) rotate(-10)" cx="0" cy="0" rx="60" ry="60" />
+        </g>
+
+        <!-- BODY -->
+        <g transform="translate(256, 256)" style="stroke-width:50px;">
+            <path d="M-120,120L120,-120Z" style="stroke:#47009C;"/>
+            <path d="M0,0L30,190Z M0,0L190,15Z" style="stroke:#47009C;"/>
+        </g>
+        <!-- EYES -->
+        <g style="stroke-width:30px;">
+            <g transform="translate(100, 220) rotate(-30)">
+                <ellipse cx="0" cy="+20" rx="26" ry="26" style="fill:#5800C3;"/>
+                <ellipse cx="0" cy="0" rx="60" ry="60" style="stroke:#47009C;"/>
+            </g>
+            <g transform="translate(240, 100) rotate(-10)">
+                <ellipse cx="+10" cy="+20" rx="26" ry="26" style="fill:#5800C3;"/>
+                <ellipse cx="0" cy="0" rx="60" ry="60" style="stroke:#47009C;"/>
+            </g>
+        </g>
+    </g>
+
+    <g transform="translate(0, 512)">
+        <g transform="translate(256, 256)">
+            <g transform="rotate(-45) scale(0.77)">
+            <!--<g transform="">-->
+                <!-- SHADOW -->
+                <g transform="translate(0, 30)">
+                    <ellipse transform="translate(-110, -150)" cx="0" cy="0" rx="72" ry="72" style="fill:#000;stroke:#000;stroke-width:80px;"/>
+                    <ellipse transform="translate(+110, -150)" cx="0" cy="0" rx="72" ry="72" style="fill:#000;stroke:#000;stroke-width:80px;"/>
+                    <path d="M-220,0 L+220,-0Z  M0,0 L-160,+200Z  M0,0 L+160,+200Z" style="stroke-width:100px;stroke:#000;"/>
+                </g>
+                <!-- EYES -->
+                <g transform="translate(0, -150)">
+                    <g transform="translate(-110, 0)">
+                        <ellipse cx="0" cy="0" rx="72" ry="72" style="fill:#fff;stroke:#fff;stroke-width:80px;"/>
+                        <ellipse cx="0" cy="0" rx="72" ry="72" style="fill:none;stroke:#47009C;stroke-width:40px;"/>
+                        <ellipse cx="0" cy="24" rx="32" ry="32" style="fill:#47009C;"/>
+                    </g>
+                    <g transform="translate(+110, 0)">
+                        <ellipse cx="0" cy="0" rx="72" ry="72" style="fill:#fff;stroke:#fff;stroke-width:80px;"/>
+                        <ellipse cx="0" cy="0" rx="72" ry="72" style="fill:#fff;stroke:#47009C;stroke-width:40px;"/>
+                        <ellipse cx="0" cy="24" rx="32" ry="32" style="fill:#47009C;"/>
+                    </g>
+                </g>
+                <!-- BODY -->
+                <path d="M-220,0 L+220,-0Z  M0,0 L-160,+200Z  M0,0 L+160,+200Z" style="stroke-width:100px;stroke:#fff;"/>
+                <path d="M-220,0 L+220,-0Z  M0,0 L-160,+200Z  M0,0 L+160,+200Z" style="stroke-width:65px;stroke:#47009C;"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,37 @@
+<svg
+    width="512" height="512"
+    viewBox="0 0 512 512"
+    xmlns="http://www.w3.org/2000/svg"
+    style="stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:1.5; fill:none; stroke:none;"
+>
+    <!-- SHADOW -->
+    <g style="stroke:black;fill:black;" transform="translate(15,15)">
+        <path d="M-120,120L120,-120Z M0,0L30,190Z M0,0L190,15Z" style="stroke-width:90px;" transform="translate(256, 256)"/>
+        <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke-width:60px;" transform="translate(120, 200) rotate(-30)"/>
+        <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke-width:60px;" transform="translate(240, 100) rotate(-10)"/>
+    </g>
+
+    <!-- WHITE OUTLINE -->
+    <g style="stroke:white;fill:white;stroke-width:60px;">
+        <path transform="translate(256, 256)" d="M-120,120L120,-120Z M0,0L30,190Z M0,0L190,15Z" style="fill:none;stroke-width:90px;"/>
+        <ellipse transform="translate(120, 200) rotate(-30)" cx="0" cy="0" rx="38" ry="70" />
+        <ellipse transform="translate(240, 100) rotate(-10)" cx="0" cy="0" rx="38" ry="70" />
+    </g>
+
+    <!-- BODY -->
+    <g transform="translate(256, 256)" style="stroke-width:50px;">
+        <path d="M-120,120L120,-120Z" style="stroke:#5800C3;"/>
+        <path d="M0,0L30,190Z M0,0L190,15Z" style="stroke:#47009C;"/>
+    </g>
+    <!-- EYES -->
+    <g style="stroke-width:30px;">
+        <g transform="translate(120, 200) rotate(-30)">
+            <ellipse cx="-17" cy="0" rx="24" ry="24" style="fill:#5800C3;"/>
+            <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke:#47009C;"/>
+        </g>
+        <g transform="translate(240, 100) rotate(-10)">
+            <ellipse cx="-19" cy="12" rx="24" ry="24" style="fill:#5800C3;"/>
+            <ellipse cx="0" cy="0" rx="38" ry="70" style="stroke:#47009C;"/>
+        </g>
+    </g>
+</svg>
