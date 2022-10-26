@@ -4,8 +4,11 @@
     xmlns="http://www.w3.org/2000/svg"
     style="stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:1.5; fill:none; stroke:none;"
 >
-    <g transform="translate(256, 256)">
-        <g transform="rotate(-45) scale(0.77)">
+    <!--
+    <rect x="0" y="0" width="512" height="512" style="fill:#777;" />
+    -->
+    <g transform="translate(240, 240)">
+        <g transform="rotate(-45) scale(0.8)">
         <!--<g transform="">-->
             <!-- SHADOW -->
             <g transform="translate(0, 40)">
