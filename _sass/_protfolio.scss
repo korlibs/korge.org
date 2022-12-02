@@ -76,9 +76,11 @@
     & .portfolio-image {
         position: relative;
         overflow: hidden;
+        padding: 3px;
 
         & img {
             width: 100%;
+            border-radius: 5%;
             @include transition(0.3s);
         }
 
