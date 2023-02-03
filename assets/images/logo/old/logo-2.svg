@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 4096 4096" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-67,-47)">
+        <g transform="matrix(7.93308,0,0,7.93308,29.0425,97.4761)">
+            <g transform="matrix(1,0,0,1,256,256)">
+                <path d="M-120,120L120,-120L-120,120ZM0,0L30,190L0,0ZM0,0L190,15L0,0Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:90px;"/>
+            </g>
+            <g transform="matrix(0.866025,-0.5,0.5,0.866025,120,200)">
+                <ellipse cx="0" cy="0" rx="38" ry="70" style="fill:white;stroke:white;stroke-width:60px;"/>
+            </g>
+            <g transform="matrix(0.984808,-0.173648,0.173648,0.984808,240,100)">
+                <ellipse cx="0" cy="0" rx="38" ry="70" style="fill:white;stroke:white;stroke-width:60px;"/>
+            </g>
+        </g>
+        <g transform="matrix(7.93308,0,0,7.93308,2059.91,2128.35)">
+            <path d="M-120,120L120,-120L-120,120Z" style="fill:none;fill-rule:nonzero;stroke:rgb(88,0,195);stroke-width:50px;"/>
+            <path d="M0,0L30,190L0,0ZM0,0L190,15L0,0Z" style="fill:none;fill-rule:nonzero;stroke:rgb(71,0,156);stroke-width:50px;"/>
+        </g>
+        <g transform="matrix(7.93308,0,0,7.93308,29.0425,97.4761)">
+            <g transform="matrix(0.866025,-0.5,0.5,0.866025,120,200)">
+                <circle cx="-17" cy="0" r="24" style="fill:rgb(88,0,195);"/>
+                <ellipse cx="0" cy="0" rx="38" ry="70" style="fill:none;stroke:rgb(71,0,156);stroke-width:30px;"/>
+            </g>
+            <g transform="matrix(0.984808,-0.173648,0.173648,0.984808,240,100)">
+                <circle cx="-19" cy="12" r="24" style="fill:rgb(88,0,195);"/>
+                <ellipse cx="0" cy="0" rx="38" ry="70" style="fill:none;stroke:rgb(71,0,156);stroke-width:30px;"/>
+            </g>
+        </g>
+    </g>
+    <g id="Layer1">
+    </g>
+</svg>
