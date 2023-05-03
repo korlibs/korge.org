@@ -16,6 +16,11 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="slider-content">
+                            <div class="d-md-none" style="position:relative;z-index:-1000;">
+                                <div style="position:absolute;top:100px;">
+                                    <img src="{{ carousel_item.image | absolute_url }}" alt="Hero" style="width: 400px;height:400px;filter: grayscale(50%);">
+                                </div>
+                            </div>
                             <h1 class="title">{{ carousel_item.title }}</h1>
                             <p class="text">{{ carousel_item.content }}</p>
                             <ul class="slider-btn rounded-buttons">
@@ -30,7 +35,7 @@
                     </div>
                 </div> <!-- row -->
             </div> <!-- container -->
-            <div class="slider-image-box d-none d-lg-flex align-items-end">
+            <div class="slider-image-box d-none d-md-flex align-items-end">
                 <div class="slider-image">
                     <img src="{{ carousel_item.image | absolute_url }}" alt="Hero" style="width: 400px;height:400px; {{ carousel_item.image_style }}">
                 </div> <!-- slider-imgae -->
