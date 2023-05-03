@@ -99,6 +99,14 @@
     function createTransform(ratioX, ratioY, over, time) {
         const scale = 8
 
+        const mX = (ratioX - 0.5) * 2;
+        const mY = (ratioY - 0.5) * 2;
+
+        const rotateY = mX * scale;
+        const rotateX = -mY * scale;
+        //const rotateY = -mX * scale;
+
+        /*
         const topLeft = { rotateX: scale, rotateY : -scale }
         const topRight = { rotateX: scale, rotateY : scale }
 
@@ -107,6 +115,8 @@
 
         const rotateX = bilinearInterpolation(topLeft.rotateX, topRight.rotateX, bottomLeft.rotateX, bottomRight.rotateX, ratioX, ratioY)
         const rotateY = bilinearInterpolation(topLeft.rotateY, topRight.rotateY, bottomLeft.rotateY, bottomRight.rotateY, ratioX, ratioY)
+
+         */
 
         return `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.1, 1.1, 1.1)`
     }
