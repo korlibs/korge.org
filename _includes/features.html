@@ -75,10 +75,10 @@
 
 <script type="application/javascript">
 
-    function getMouseCoordinatesRelativeToElement(event, element = event.currentTarget) {
+    function getMouseCoordinatesRelativeToElementCoords(coords, element) {
         const rect = element.getBoundingClientRect();
-        const mouseX = event.clientX - rect.left;
-        const mouseY = event.clientY - rect.top;
+        const mouseX = coords.x - rect.left;
+        const mouseY = coords.y - rect.top;
 
         const style = getComputedStyle(element);
         const transform = style.transform;
@@ -93,6 +93,11 @@
             x: transformedPoint.x,
             y: transformedPoint.y
         };
+    }
+
+    function getMouseCoordinatesRelativeToElement(event, element = event.currentTarget) {
+        const clientRoot = event.touches ? event.touches[0] : event;
+        return getMouseCoordinatesRelativeToElementCoords({ x: clientRoot.clientX, y: clientRoot.clientY }, element)
     }
 
     function bilinearInterpolation(topLeft, topRight, bottomLeft, bottomRight, ratioX, ratioY) {
@@ -136,7 +141,8 @@
     document.querySelectorAll(".single-features").forEach((element) => {
         // @type HTMLElement
         const htmlElement = element;
-        htmlElement.addEventListener('mousemove', (e) => {
+        const mouseMoveEvent = (e) => {
+            //console.log(e.touches)
             //if (e.target != htmlElement) return
             const { x, y } = getMouseCoordinatesRelativeToElement(e)
             //var rect = e.target.getBoundingClientRect();
@@ -146,16 +152,25 @@
             const ratioX = Math.min(Math.max(x / htmlElement.offsetWidth, 0), 1)
             const ratioY = Math.min(Math.max(y / htmlElement.offsetHeight, 0), 1)
 
-            //console.log(ratioX, ratioY)
+            //console.log(x, y, ratioX, ratioY)
+
             //htmlElement.style.setProperty('--mouse-mX', (ratioX - 0.5) * 2);
             //htmlElement.style.setProperty('--mouse-mY', (ratioY - 0.5) * 2);
 
             htmlElement.style.transform = createTransform(ratioX, ratioY, true, 0)
             //console.log(htmlElement.style.transform);
-        })
-        htmlElement.addEventListener('mouseleave', (e) => {
+        }
+        const mouseExit = (e) => {
             htmlElement.style.transform = "inherit"
-        })
+        }
+
+        htmlElement.addEventListener('touchstart', mouseMoveEvent)
+        htmlElement.addEventListener('touchmove', mouseMoveEvent)
+        htmlElement.addEventListener('touchend', mouseExit)
+
+        htmlElement.addEventListener('mousemove', mouseMoveEvent)
+        htmlElement.addEventListener('mouseleave', mouseExit)
+
         htmlElement.addEventListener('click', (e) => {
             document.location = htmlElement.querySelector("a").href
         })
