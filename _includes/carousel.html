@@ -23,14 +23,16 @@
                             </div>
                             <h1 class="title">{{ carousel_item.title }}</h1>
                             <p class="text">{{ carousel_item.content }}</p>
-                            <ul class="slider-btn rounded-buttons">
-                                {% for button in carousel_item.buttons %}
-                                <li><a class="main-btn {% if forloop.first %}rounded-one{% else %}rounded-two{% endif %}" href="{{ button.link }}" target="_blank">{{ button.title }}</a></li>
-                                {% endfor %}
-                            </ul>
-                            {% for ex in carousel_item.extra %}
+                            <div style="opacity:0.75;">
+                                <ul class="slider-btn rounded-buttons">
+                                    {% for button in carousel_item.buttons %}
+                                    <li><a class="main-btn {% if forloop.first %}rounded-one{% else %}rounded-two{% endif %}" href="{{ button.link }}" target="_blank">{{ button.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                                {% for ex in carousel_item.extra %}
                                 {{ ex }}
-                            {% endfor %}
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div> <!-- row -->
