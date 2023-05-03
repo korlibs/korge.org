@@ -14,11 +14,22 @@
     }
     .single-features:hover {
         box-shadow: rgba(15, 102, 116, 0.17) 0 0 45px;
-        transition: box-shadow .5s;
+        /*opacity: calc(100% + var(--mouse-ratioX));*/
         /*
-        transform: perspective(4000px) rotateX(calc((var(--mouse-ratioX, 0) / 100) * 20deg)) rotateY(0deg) scale3d(1, 1, 1);
+        transform: perspective(4000px)
+            rotateX(
+                calc(
+                    var(--mouse-mY, 0) * -8deg
+                )
+            )
+            rotateY(
+                calc(
+                    var(--mouse-mX, 0) * 8deg
+                )
+            )
+            scale3d(1.1, 1.1, 1.1);
          */
-        /*transition: transform .1s, box-shadow 1s;*/
+        transition: transform .1s, box-shadow 1s;
     }
     .single-features:hover a {
         color: var(--purple) !important;
@@ -131,12 +142,12 @@
             //var x = e.clientX - rect.left; //x position within the element.
             //var y = e.clientY - rect.top;  //y position within the element.
 
-            const ratioX = x / htmlElement.offsetWidth
-            const ratioY = y / htmlElement.offsetHeight
+            const ratioX = Math.min(Math.max(x / htmlElement.offsetWidth, 0), 1)
+            const ratioY = Math.min(Math.max(y / htmlElement.offsetHeight, 0), 1)
 
-            console.log(ratioX, ratioY)
-            document.documentElement.style.setProperty('--mouse-ratioX', ratioX * 100);
-            document.documentElement.style.setProperty('--mouse-ratioY', ratioY * 100);
+            //console.log(ratioX, ratioY)
+            //htmlElement.style.setProperty('--mouse-mX', (ratioX - 0.5) * 2);
+            //htmlElement.style.setProperty('--mouse-mY', (ratioY - 0.5) * 2);
 
             htmlElement.style.transform = createTransform(ratioX, ratioY, true, 0)
             //console.log(htmlElement.style.transform);
