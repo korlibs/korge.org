@@ -69,7 +69,7 @@
 		let version = (localStorage.getItem(versionLocalStorageKey) || '').replace(/^v/, '');
 		const lastKnownVersion = 'v3.0.0'
 		let rversion = (version === 'vundefined' || version === 'undefined' || version === '') ? lastKnownVersion : (version || lastKnownVersion);
-		rversion = `${rversion}`.replace(/^v/, '');
+		rversion = `${rversion}`.replace(/^[vwz]/, '').replace(/-only-gradle-plugin.*$/, '');
 		document.getElementById('version').innerText = `v${rversion}`;
 	}
 
