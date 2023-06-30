@@ -1,19 +1,11 @@
 - content: |
-    [Forum](https://forum.korge.org/)
+    [Discussions](https://forum.korge.org/)
   icon: lni lni-comments
   color: 1
-- content: |
-    [Stackoverflow](https://stackoverflow.com/questions/tagged/korge)
-  icon: lni lni-stackoverflow
-  color: 2
 - content: |
     [Discord](https://discord.gg/jKCxCHn)
   icon: lni lni-discord
   color: 4
-- content: |
-    [Slack](https://slack.korge.org/)
-  icon: lni lni-slack
-  color: 3
 - content: |
     [Youtube](https://youtube.korge.org)
   icon: lni lni-youtube
