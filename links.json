@@ -17,6 +17,7 @@ layout: null
     { "id": "store", "url" : "https://store.korge.org/", "title": "KorGE Asset and Library Store" },
     { "id": "landing", "url" : "https://korge.org/", "title": "KorGE Lading Page" },
     { "id": "merch", "url" : "https://merch.korge.org/", "title": "KorGE Merchandising" },
+    { "id": "id", "url" : "https://id.korge.org/", "title": "KorGE Github Identification for users" },
     { "id": "links", "url" : "https://korge.org/links.json", "title": "KorGE All Links JSON" }
   ]
 }
