@@ -1,0 +1,19 @@
+---
+layout: null
+---
+{
+  "blog": { "url" : "https://blog.korge.org/", title: "KorGE Blog" },
+  "forum": { "url" : "https://forum.korge.org/", title: "KorGE Github Discussions Forum" },
+  "discord": { "url" : "https://discord.korge.org/", title: "KorGE Discord" },
+  "twitter": { "url" : "https://twitter.korge.org/", title: "KorGE Twitter" },
+  "facebook": { "url" : "https://facebook.korge.org/", title: "KorGE Facebook" },
+  "youtube": { "url" : "https://youtube.korge.org/", title: "KorGE Youtube" },
+  "linkedin": { "url" : "https://linkedin.korge.org/", title: "KorGE Linkedin" },
+  "tasks": { "url" : "https://tasks.korge.org/", title: "KorGE Github Tasks Board" },
+  "docs": { "url" : "https://docs.korge.org/", title: "KorGE Web Documentation" },
+  "dokka": { "url" : "https://dokka.korge.org/", title: "KorGE Dokka Code Documentation" },
+  "blog": { "url" : "https://blog.korge.org/", title: "KorGE Blog" },
+  "store": { "url" : "https://store.korge.org/", title: "KorGE Asset and Library Store" },
+  "landing": { "url" : "https://korge.org/", title: "KorGE Lading Page" },
+  "merch": { "url" : "https://merch.korge.org/", title: "KorGE Merchandising" }
+}
