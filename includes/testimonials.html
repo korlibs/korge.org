@@ -28,7 +28,7 @@
                         {% for testimonial in site.testimonials %}
                         <div class="single-testimonial">
                             <div class="testimonial-text text">
-                                {{ testimonial.content | markdownify | replace: "<p>", "<p class='text'>" }}
+                                {{ testimonial.content | markdown_to_html | replace: "<p>", "<p class='text'>" }}
                             </div>
                             <div class="testimonial-author d-sm-flex justify-content-between">
                                 <div class="author-info d-flex align-items-center">

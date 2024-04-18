@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="features-content">
-                        {{ feature.description | markdownify }}
+                        {{ feature.description | markdown_to_html }}
                         {% if feature.permalink != nil %}
                         <a class="features-btn" href="{{ feature.url | absolute_url }}">LEARN MORE</a>
                         {% endif %}

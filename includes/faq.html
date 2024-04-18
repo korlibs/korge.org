@@ -22,7 +22,7 @@
 
                                 <div id="collapse{{ forloop.index }}" class="collapse {% if forloop.first %}show{% else %}{% endif %}" aria-labelledby="heading{{ forloop.index }}" data-parent="#accordionExample">
                                     <div class="card-body">
-                                        {{ faq.content | markdownify }}
+                                        {{ faq.content | markdown_to_html }}
                                     </div>
                                 </div>
                             </div> <!-- card -->
