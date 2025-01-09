@@ -11,14 +11,15 @@
             "id": "dd23e4f19fa00174",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "privacy.md",
-                "mode": "source",
-                "source": false
+                "aFile": "features/bundles.md",
+                "bFile": "features/bundles.md",
+                "aRef": "HEAD",
+                "bRef": ""
               },
-              "icon": "lucide-file",
-              "title": "privacy"
+              "icon": "diff",
+              "title": "Diff: bundles"
             }
           }
         ]
@@ -61,8 +62,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "30778b12e46a178f",
@@ -79,8 +79,19 @@
               "icon": "lucide-folder-closed",
               "title": "Files"
             }
+          },
+          {
+            "id": "0e0b70e50674f762",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -100,7 +111,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "features/@features.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for @features"
+              "title": "Backlinks"
             }
           },
           {
@@ -146,21 +156,20 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "features/@features.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of @features"
+              "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,13 +180,19 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "dbfolder:Create a new database table": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "dd23e4f19fa00174",
   "lastOpenFiles": [
-    "about.md",
+    "features/bundles.md",
+    "features/editor.md",
+    "features/productive.md",
+    "features/quicksetup.md",
+    "showcases/pacoman.md",
     "privacy.md",
+    "about.md",
     "highlights/jobe.md",
     "highlights/@highlights.md",
     "features/@features.md",
@@ -187,9 +202,7 @@
     "features/kotlin.md",
     "features/debugger.md",
     "sitemap.html",
-    "features/quicksetup.md",
     "features/fully-featured.md",
-    "features/bundles.md",
     "features/features.11tydata.js",
     "features/showcases.11tydata.js",
     "showcases/showcases.11tydata.js",
@@ -200,18 +213,15 @@
     "build.sh",
     "showcases/2048.md",
     "showcases/asteroidsplusplus.md",
-    "showcases/pacoman.md",
     "features/bundle.md",
     "showcases/hitklack.md",
     "showcases.md",
     "Untitled.md",
     "features/features.md",
-    "features/editor.md",
     "showcases/candycrush.md",
     "showcases/dungeon.md",
     "showcases/magicmaze.md",
     "showcases/parasite.md",
-    "showcases/paf.md",
     "assets/images/favicon.png",
     "assets/images/f-shape-1.svg",
     "assets/images/enterprise.svg",

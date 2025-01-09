@@ -7,4 +7,4 @@ image: /assets/images/portfolio/pacoman.png
 showcase: true
 tags: [arcade]
 ---
-![[pacoman.png]]
+![pacoman](assets/images/portfolio/pacoman.png)
