@@ -11,12 +11,14 @@
             "id": "dd23e4f19fa00174",
             "type": "leaf",
             "state": {
-              "type": "database-plugin",
+              "type": "markdown",
               "state": {
-                "file": "features/@features.md"
+                "file": "highlights/jobe.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "database-folder-icon",
-              "title": "@features"
+              "icon": "lucide-file",
+              "title": "jobe"
             }
           }
         ]
@@ -174,9 +176,13 @@
   },
   "active": "dd23e4f19fa00174",
   "lastOpenFiles": [
+    "highlights/@highlights.md",
+    "highlights/jobe.md",
+    "features/@features.md",
+    "highlights/Untitled.md",
+    "highlights",
     "showcases/@showcases.md",
     "features/kotlin.md",
-    "features/@features.md",
     "features/debugger.md",
     "sitemap.html",
     "features/quicksetup.md",
@@ -190,7 +196,6 @@
     "build.bat",
     "serve copy.bat",
     "build.sh",
-    "serve.sh",
     "showcases/2048.md",
     "showcases/asteroidsplusplus.md",
     "showcases/pacoman.md",
@@ -207,9 +212,6 @@
     "showcases/magicmaze.md",
     "showcases/parasite.md",
     "showcases/paf.md",
-    "showcases/snake.md",
-    "showcases/spaceorbiters.md",
-    "showcases/steroids.md",
     "assets/images/favicon.png",
     "assets/images/f-shape-1.svg",
     "assets/images/enterprise.svg",

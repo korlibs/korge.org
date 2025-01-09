@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiHandshake",
+      "LiHeartHandshake",
       "LiSparkles",
       "LiLockKeyholeOpen",
-      "LiQuestionMarkGlyph",
-      "LiImages",
-      "LiGamepad2"
+      "LiQuestionMarkGlyph"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -46,5 +46,10 @@
   "about.md": "LiQuestionMarkGlyph",
   "privacy.md": "LiLockKeyholeOpen",
   "features/@features.md": "LiSparkles",
-  "showcases/@showcases.md": "LiGamepad2"
+  "showcases/@showcases.md": "LiGamepad2",
+  "highlights": {
+    "iconName": "LiHeartHandshake",
+    "iconColor": "#b92727"
+  },
+  "highlights/@highlights.md": "LiHeartHandshake"
 }

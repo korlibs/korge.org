@@ -61,6 +61,16 @@ export default function (eleventyConfig) {
 			;
 	});
 
+	eleventyConfig.addCollection("highlights", function (collectionApi) {
+		return collectionApi.getFilteredByGlob(`../highlights/**/*`)
+			//.filter((item) => !item.inputPath.endsWith("_posts.md"))
+			//.filter((item) => !item.inputPath.endsWith("_ideas.md"))
+			.filter((item) => !item.data.draft)
+			.filter((item) => !item.data.priv)
+			.toSorted((a, b) => parseFloat(a?.data?.order || 0) - parseFloat(b?.data?.order || 0) )
+			;
+	});
+
 	eleventyConfig.addCollection("showcases", function (collectionApi) {
 		return collectionApi.getFilteredByGlob(`../showcases/**/*`)
 			//.filter((item) => !item.inputPath.endsWith("_posts.md"))
