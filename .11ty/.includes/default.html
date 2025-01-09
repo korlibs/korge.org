@@ -6,9 +6,9 @@
 <meta charset="utf-8">
 
 <!--====== Title ======-->
-<title>{{ site.title }}</title>
+<title>{{ title | default("KorGE Game Engine") }}</title>
 
-<meta name="description" content="{{ site.description }}">
+<meta name="description" content="{{ description | default('Multiplatform Kotlin Game Engine') }}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!--====== Favicon Icon ======-->

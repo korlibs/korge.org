@@ -13,13 +13,13 @@
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "features/bundles.md",
-                "bFile": "features/bundles.md",
+                "aFile": "features/editor.md",
+                "bFile": "features/editor.md",
                 "aRef": "HEAD",
                 "bRef": ""
               },
               "icon": "diff",
-              "title": "Diff: bundles"
+              "title": "Diff: editor"
             }
           }
         ]
@@ -35,23 +35,6 @@
         "id": "40d1898498cff7bd",
         "type": "tabs",
         "children": [
-          {
-            "id": "9af273ba743b2aeb",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
-            }
-          },
           {
             "id": "7ed60b5e9def685e",
             "type": "leaf",
@@ -88,6 +71,23 @@
               "state": {},
               "icon": "git-pull-request",
               "title": "Source Control"
+            }
+          },
+          {
+            "id": "9af273ba743b2aeb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           }
         ],
@@ -184,7 +184,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dd23e4f19fa00174",
+  "active": "0e0b70e50674f762",
   "lastOpenFiles": [
     "features/bundles.md",
     "features/editor.md",
