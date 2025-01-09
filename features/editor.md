@@ -1,9 +1,8 @@
 ---
 layout: feature
 title: Visual <strong>editor</strong>
-title_menu: editor
+title_menu: Editor
 feature: true
-permalink: /features/editor
 order: -5
 icon: lni-pallet
 description: |

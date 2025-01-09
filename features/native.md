@@ -1,9 +1,7 @@
 ---
-layout: feature
 title: Real <strong>native</strong> multiplatform
 title_menu: Native
 feature: true
-permalink: /features/native
 order: 1
 icon: lni-laptop-phone
 description: |

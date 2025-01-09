@@ -1,9 +1,7 @@
 ---
-layout: feature
 title: Small <strong>footprint</strong>
 title_menu: Small
 feature: true
-permalink: /features/small
 order: 5
 icon: lni-magnifier
 description: |

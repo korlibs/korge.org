@@ -1,10 +1,8 @@
 ---
-layout: feature
 title: Fully <strong>productive</strong>
 title_menu: Productive
 title_full: Iterate <strong>fast</strong>, develop with pleasure
 feature: true
-permalink: /features/productive
 order: 2
 icon: lni-bolt
 description: |

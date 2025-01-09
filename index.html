@@ -1,20 +1,512 @@
 ---
 layout: default
 version: 2
+priority: 1.0
+permalink: /
 ---
 
-{% include carousel.html %}
+<!--====== SLIDER PART START (CAROUSEL) ======-->
 
-{% include show.html %}
+<section id="home" class="slider_area">
 
-{% include features.html %}
+    <div id="carouselThree" class="carousel slide" data-ride="carousel">
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active"
+                style="background-attachment: fixed;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="slider-content">
+                                <div class="d-md-none" style="position:relative;z-index:-1000;">
+                                    <div style="position:absolute;top:100px;">
+                                        <img src="/assets/images/slider/mascots-pose1-base.webp" alt="Hero" style="width: 400px; height: 400px; filter: grayscale(50%);">
+                                    </div>
+                                </div>
+                                <h1 class="title">KorGE</h1>
+                                <p class="text">
+                                    <a class="github-button" href="https://github.com/korlibs/korge" data-size="large" data-show-count="true" aria-label="Star korlibs/korge on GitHub">Star</a>
+                                    <script async defer src="https://buttons.github.io/buttons.js"></script>
+                                    <p class="text">Modern Multiplatform Game Engine for Kotlin.<br />
+                                    <h3 style="color: #ffffff"><span id="version" ></span></h3></p>
+                                </p>
+                                {% include "install_korge_forge.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-image-box d-none d-md-flex align-items-end">
+                    <div class="slider-image">
+                        <img src="/assets/images/slider/mascots-pose1-base.webp" alt="Hero" style="width: 400px;height:400px; filter: brightness(1.2);">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-{% include showcases.html %}
+        <!--
+        <ol class="carousel-indicators">
+            {% for carousel_item in site.carousel %}
+            <li data-target="#carouselThree" data-slide-to="{{ forloop.index0 }}" class="{% if forloop.first %}active{% else %}{% endif %}"></li>
+            {% endfor %}
+        </ol>
 
-{% comment %}
-{% include testimonials.html %}
+        <div class="carousel-inner">
+            {% for carousel_item in site.carousel %}
+            <div class="carousel-item {% if forloop.first %}active{% else %}{% endif %}"
+                style="background-attachment: fixed;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="slider-content">
+                                <div class="d-md-none" style="position:relative;z-index:-1000;">
+                                    <div style="position:absolute;top:100px;">
+                                        <img src="{{ carousel_item.image | absolute_url }}" alt="Hero" style="width: 400px;height:400px;filter: grayscale(50%);">
+                                    </div>
+                                </div>
+                                <h1 class="title">{{ carousel_item.title }}</h1>
+                                <p class="text">{{ carousel_item.content }}</p>
+                                <div style="opacity:0.75;">
+                                    <ul class="slider-btn rounded-buttons">
+                                        {% for button in carousel_item.buttons %}
+                                        <li><a class="main-btn {% if forloop.first %}rounded-one{% else %}rounded-two{% endif %}" href="{{ button.link }}" target="_blank">{{ button.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% for ex in carousel_item.extra %}
+                                    {{ ex }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-image-box d-none d-md-flex align-items-end">
+                    <div class="slider-image">
+                        <img src="{{ carousel_item.image | absolute_url }}" alt="Hero" style="width: 400px;height:400px; {{ carousel_item.image_style }}">
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% set carousel_size = site.carousel | size %}
+        {% if carousel_size >= 2 %}
+        <a class="carousel-control-prev" href="#carouselThree" role="button" data-slide="prev"><i class="lni lni-arrow-left"></i></a>
+        <a class="carousel-control-next" href="#carouselThree" role="button" data-slide="next"><i class="lni lni-arrow-right"></i></a>
+        {% endif %}
+        -->
+    </div>
 
-{% include faq.html %}
-{% endcomment %}
+</section>
 
-{% include contact.html %}
+<script type="text/javascript">
+    const versionVersion = "V4"
+    const versionTimeLocalStorageKey = `versionCacheTime${versionVersion}`;
+    const versionLocalStorageKey = `version${versionVersion}`;
+
+    function updateVersion() {
+        let version = (localStorage.getItem(versionLocalStorageKey) || '').replace(/^v/, '');
+        const lastKnownVersion = 'v3.0.0'
+        let rversion = (version === 'vundefined' || version === 'undefined' || version === '') ? lastKnownVersion : (version || lastKnownVersion);
+        rversion = `${rversion}`.replace(/^[vwz]/, '').replace(/-only-gradle-plugin.*$/, '');
+        document.getElementById('version').innerText = `v${rversion}`;
+    }
+
+    updateVersion();
+
+    async function fetchJson(url) {
+        let data = await fetch(url);
+        let json = await data.json();
+        return json;
+    }
+
+    async function doDynamic() {
+        let versionCacheTime = localStorage.getItem(versionTimeLocalStorageKey);
+        if (!versionCacheTime || ((Date.now() - versionCacheTime) > 24 * 3600 * 1000)) {
+
+            let data = await fetchJson("https://api.github.com/repos/korlibs/korge/releases/latest");
+            console.log(data);
+            localStorage.setItem(versionTimeLocalStorageKey, Date.now());
+            localStorage.setItem(versionLocalStorageKey, 'v' + data.tag_name.replace(/^(release-|v)/, ''));
+            updateVersion();
+        }
+    }
+    doDynamic();
+</script>
+
+<!--====== SLIDER PART ENDS (CAROUSEL) ======-->
+
+<section id="action">
+    <div class="container-flex">
+        <div class="row justify-content-center">
+            <div style="margin:1em;">
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CWYI42JM&placement=korgeorg" id="_carbonads_js"></script>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-10">
+                    <h3 class="title">KorGE In Action</h3>
+                    <p class="text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+		    <iframe src="https://show.korge.org/#DungeonScene" style="width: 100vw;height: 600px; min-height: 50vh;border:0;padding:0;margin:0;" allowfullscreen referrerpolicy=origin ></iframe>
+        </div>
+    </div>
+</section>
+
+<!--====== FEATRES TWO PART START ======-->
+
+{% set feature_pages = site.pages | where("feature", true) %}
+{% set feature_pages = feature_pages | sort("order") %}
+
+<!--suppress CssUnresolvedCustomProperty -->
+<style>
+    .single-features {
+        cursor: pointer;
+        transform: perspective(4000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+        box-shadow: rgba(15, 102, 116, 0.45) 0 0 5px;
+        transition: transform .5s, box-shadow 1s;
+        overflow: hidden;
+    }
+    .single-features:hover {
+        box-shadow: rgba(15, 102, 116, 0.17) 0 0 45px;
+        /*opacity: calc(100% + var(--mouse-ratioX));*/
+        /*
+        transform: perspective(4000px)
+        rotateX(calc(var(--mouse-mY, 0) * -8deg))
+        rotateY(calc(var(--mouse-mX, 0) * 8deg))
+        scale3d(1.1, 1.1, 1.1);
+        */
+        transition: transform .1s, box-shadow 1s;
+    }
+    .single-features:hover a {
+        color: var(--purple) !important;
+        transition: color 0.5s;
+    }
+</style>
+
+{% include "feature_list.html" %}
+
+<script type="application/javascript">
+    function getMouseCoordinatesRelativeToElementCoords(coords, element) {
+        const rect = element.getBoundingClientRect();
+        const mouseX = coords.x - rect.left;
+        const mouseY = coords.y - rect.top;
+
+        const style = getComputedStyle(element);
+        const transform = style.transform;
+
+        const matrix = new DOMMatrix(transform);
+        const inverseMatrix = matrix.invertSelf();
+
+        const point = new DOMPoint(mouseX, mouseY);
+        const transformedPoint = point.matrixTransform(inverseMatrix);
+
+        return {
+            x: transformedPoint.x,
+            y: transformedPoint.y
+        };
+    }
+
+    function getMouseCoordinatesRelativeToElement(event, element = event.currentTarget) {
+        const clientRoot = event.touches ? event.touches[0] : event;
+        return getMouseCoordinatesRelativeToElementCoords({ x: clientRoot.clientX, y: clientRoot.clientY }, element)
+    }
+
+    function bilinearInterpolation(topLeft, topRight, bottomLeft, bottomRight, ratioX, ratioY) {
+        // Interpolate values along the top edge
+        const E = topLeft * (1 - ratioX) + topRight * ratioX;
+
+        // Interpolate values along the bottom edge
+        const F = bottomLeft * (1 - ratioX) + bottomRight * ratioX;
+
+        // Interpolate values between E and F
+        const G = E * (1 - ratioY) + F * ratioY;
+
+        return G;
+    }
+
+    function createTransform(ratioX, ratioY, over, time) {
+        const scale = 8
+
+        const mX = (ratioX - 0.5) * 2;
+        const mY = (ratioY - 0.5) * 2;
+
+        const rotateY = mX * scale;
+        const rotateX = -mY * scale;
+        //const rotateY = -mX * scale;
+
+        /*
+        const topLeft = { rotateX: scale, rotateY : -scale }
+        const topRight = { rotateX: scale, rotateY : scale }
+
+        const bottomLeft = { rotateX: -scale, rotateY : -scale }
+        const bottomRight = { rotateX: -scale, rotateY : scale }
+
+        const rotateX = bilinearInterpolation(topLeft.rotateX, topRight.rotateX, bottomLeft.rotateX, bottomRight.rotateX, ratioX, ratioY)
+        const rotateY = bilinearInterpolation(topLeft.rotateY, topRight.rotateY, bottomLeft.rotateY, bottomRight.rotateY, ratioX, ratioY)
+
+         */
+
+        return `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.1, 1.1, 1.1)`
+    }
+
+    document.querySelectorAll(".single-features").forEach((element) => {
+        // @type HTMLElement
+        const htmlElement = element;
+        const mouseMoveEvent = (e) => {
+            //console.log(e.touches)
+            //if (e.target != htmlElement) return
+            const { x, y } = getMouseCoordinatesRelativeToElement(e)
+            //var rect = e.target.getBoundingClientRect();
+            //var x = e.clientX - rect.left; //x position within the element.
+            //var y = e.clientY - rect.top;  //y position within the element.
+
+            const ratioX = Math.min(Math.max(x / htmlElement.offsetWidth, 0), 1)
+            const ratioY = Math.min(Math.max(y / htmlElement.offsetHeight, 0), 1)
+
+            //console.log(x, y, ratioX, ratioY)
+
+            //htmlElement.style.setProperty('--mouse-mX', (ratioX - 0.5) * 2);
+            //htmlElement.style.setProperty('--mouse-mY', (ratioY - 0.5) * 2);
+
+            htmlElement.style.transform = createTransform(ratioX, ratioY, true, 0)
+            //console.log(htmlElement.style.transform);
+        }
+        const mouseExit = (e) => {
+            htmlElement.style.transform = "inherit"
+        }
+
+        htmlElement.addEventListener('touchstart', mouseMoveEvent)
+        htmlElement.addEventListener('touchmove', mouseMoveEvent)
+        htmlElement.addEventListener('touchend', mouseExit)
+
+        htmlElement.addEventListener('mousemove', mouseMoveEvent)
+        htmlElement.addEventListener('mouseleave', mouseExit)
+
+        htmlElement.addEventListener('click', (e) => {
+            document.location = htmlElement.querySelector("a").href
+        })
+    })
+</script>
+
+<!--====== FEATRES TWO PART ENDS ======-->
+
+
+<!--====== PORTFOLIO PART START ======-->
+
+<section id="showcases" class="portfolio-area portfolio-four pb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-10">
+                    <h3 class="title">Showcases</h3>
+                    <p class="text">
+                        Have a look to some games made using KorGE!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <div class="portfolio-menu text-center mt-50">
+                    <ul>
+                        {% for showcase_category in collections.tags %}
+                        <li
+                            data-filter="{% if showcase_category.filter == '*' %}*{% else %}{{ showcase_category.filter }}-tag{% endif %}"
+                            class="{% if forloop.first == true %}active{% else %}{% endif %}"
+                        >
+                            {{ showcase_category.title }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="row no-gutters grid mt-50">
+
+                    {% for post in collections.showcases %}
+
+                    <div class="col-lg-4 col-sm-6 {% for tag in post.data.tags %} {{tag}}-tag{% endfor %}">
+                        <div class="single-portfolio">
+                            <div class="portfolio-image">
+                                <img src="{{ post.data.icon | absolute_url }}" alt="">
+                                <div class="portfolio-overlay d-flex align-items-center justify-content-center">
+                                    <div class="portfolio-content">
+                                        <div class="portfolio-icon">
+                                            <a class="image-popup" href="{{ post.data.image | absolute_url }}"><i class="lni lni-zoom-in"></i></a>
+                                            <img src="{{ 'assets/images/portfolio/shape.svg' | absolute_url }}" alt="shape" class="shape">
+                                        </div>
+                                        <div class="portfolio-icon">
+                                            <a href="{{ post.data.targetLink }}"><i class="lni lni-link"></i></a>
+                                            <img src="{{ 'assets/images/portfolio/shape.svg' | absolute_url }}" alt="shape" class="shape">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== PORTFOLIO PART ENDS ======-->
+
+<!--====== TEAM START ======-->
+
+<!--
+<section id="team" class="team-area pt-120 pb-130">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-30">
+                    <h3 class="title">Meet The Team</h3>
+                    <p class="text">
+                        KorGE is developed by a few enthusiast people around the world!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for person in site.team %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+                    <div class="team-image">
+                        <img src="{{ person.photo | absolute_url }}" alt="Team">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-social">
+                            <ul class="social">
+                                {% if person.links.facebook %}<li><a href="{{ person.links.facebook }}"><i class="lni lni-facebook-filled"></i></a></li>{% endif %}
+                                {% if person.links.twitter %}<li><a href="{{ person.links.twitter }}"><i class="lni lni-twitter-original"></i></a></li>{% endif %}
+                                {% if person.links.linkedin %}<li><a href="{{ person.links.linkedin }}"><i class="lni lni-linkedin-original"></i></a></li>{% endif %}
+                                {% if person.links.instagram %}<li><a href="{{ person.links.instagram }}"><i class="lni lni-instagram"></i></a></li>{% endif %}
+                                {% if person.links.github %}<li><a href="{{ person.links.github }}"><i class="lni lni-github"></i></a></li>{% endif %}
+                            </ul>
+                        </div>
+                        <h4 class="team-name"><a href="#">{{ person.name }}</a></h4>
+                        <span class="sub-title">{{ person.title }}</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+-->
+
+<!--====== TEAM  ENDS ======-->
+
+
+<!--====== TESTIMONIAL PART START ======-->
+
+<!--
+<section id="testimonial" class="testimonial-area">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-xl-5 col-lg-6">
+                <div class="testimonial-left-content mt-45">
+                    <h6 class="sub-title">Testimonials</h6>
+                    <h4 class="title">What Users Says About Us</h4>
+                    <ul class="testimonial-line">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <p class="text">
+                        KorGE is the result of two years of intense development. It is totally free and OpenSource. Hope you all enjoy it.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="testimonial-right-content mt-50">
+                    <div class="quota">
+                        <i class="lni lni-quotation"></i>
+                    </div>
+                    <div class="testimonial-content-wrapper testimonial-active">
+                        {% for testimonial in site.testimonials %}
+                        <div class="single-testimonial">
+                            <div class="testimonial-text text">
+                                {{ testimonial.content | markdown_to_html | replace("<p>", "<p class='text'>") }}
+                            </div>
+                            <div class="testimonial-author d-sm-flex justify-content-between">
+                                <div class="author-info d-flex align-items-center">
+                                    <div class="author-image">
+                                        <img src="{{ testimonial.photo | absolute_url }}" alt="author">
+                                    </div>
+                                    <div class="author-name media-body">
+                                        <h5 class="name">{{ testimonial.name }}</h5>
+                                        <span class="sub-title">{{ testimonial.title }}</span>
+                                    </div>
+                                </div>
+                                <div class="author-review">
+                                    <ul class="star">
+                                        {% for n in range(1, 5) %}
+                                            {% set n_2 = n | minus(0.5) %}
+                                            {% if testimonial.stars >= n %}
+                                            <li><i class="lni lni-star-filled"></i></li>
+                                            {% elseif testimonial.stars >= n_2 %}
+                                            <li><i class="lni lni-star-half"></i></li>
+                                            {% else %}
+                                            <li><i class="lni lni-star"></i></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                    <span class="review">( {{ testimonial.reviews }} Reviews )</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+<!--====== TESTIMONIAL PART ENDS ======-->
+
+
+<!--====== CONTACT PART START ======-->
+
+<section id="contact" class="contact-area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-30">
+                    <h3 class="title">Contact</h3>
+                    <p class="text">Want to ask related things to KorGE? Reach us in our public channels!</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-info pt-30">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6"><div class="single-contact-info contact-color-1 mt-30 d-flex"><div class="contact-info-icon"><i class="lni lni-comments"></i></div><div class="contact-info-content media-body"><p class="text"><a href="https://forum.korge.org/" target="_blank">Discussions</a></p></div></div></div>
+                            <div class="col-lg-6 col-md-6"><div class="single-contact-info contact-color-4 mt-30 d-flex"><div class="contact-info-icon"><i class="lni lni-discord"></i></div><div class="contact-info-content media-body"><p class="text"><a href="https://discord.korge.org/" target="_blank">Discord</a></p></div></div></div>
+                            <div class="col-lg-6 col-md-6"><div class="single-contact-info contact-color-2 mt-30 d-flex"><div class="contact-info-icon"><i class="lni lni-youtube"></i></div><div class="contact-info-content media-body"><p class="text"><a href="https://youtube.korge.org/" target="_blank">Youtube</a></p></div></div></div>
+                            <!--
+                            <div class="col-lg-6 col-md-6"><div class="single-contact-info contact-color-1 mt-30 d-flex"><div class="contact-info-icon"><i class="lni lni-envelope"></i></div><div class="contact-info-content media-body"><p class="text"><a href="mailto:info@korge.org" target="_blank">info@korge.org</a></p></div></div></div>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div style="max-height:50vh;overflow: auto;">
+                        <a class="twitter-timeline" href="https://twitter.com/KorgeGameEngine?ref_src=twsrc%5Etfw">Tweets by KorgeGameEngine</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--====== CONTACT PART ENDS ======-->

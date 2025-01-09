@@ -1,0 +1,6 @@
+{
+    "files.eol": "\n",
+    "files.exclude": {
+        ".site": true,
+    }
+}

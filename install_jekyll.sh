@@ -1,1 +1,0 @@
-gem install jekyll --version=3.9.2 || sudo gem install jekyll --version=3.9.2

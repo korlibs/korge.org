@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "nunjucks": "^3.2.4",
+    "remove-markdown": "^0.5.5"
+  },
+  "scripts": {
+    "start": "eleventy --serve",
+    "serve": "eleventy --serve",
+    "build": "eleventy"
+  }
+}

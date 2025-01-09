@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+  },
+  "scripts": {
+    "start": "cd .11ty && eleventy --serve",
+    "serve": "cd .11ty && eleventy --serve",
+    "build": "cd .11ty && eleventy"
+  }
+}

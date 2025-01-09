@@ -1,9 +1,7 @@
 ---
-layout: feature
 title: <strong>Debugger</strong>
-title_menu: debugger
+title_menu: Debugger
 feature: true
-permalink: /features/debugger
 order: -3
 icon: lni-bug
 description: |

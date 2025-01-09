@@ -1,0 +1,55 @@
+---
+layout: post
+---
+
+<style>
+.inline-menu {
+    padding-bottom: 2em;
+}
+.inline-menu ul {
+    display: block;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.inline-menu li {
+    display: inline-block;
+}
+.inline-menu li:after {
+    content: ', '
+}
+.inline-menu li:last-child:after {
+    content: '' !important;
+}
+.list-active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+</style>
+
+<section id="features" class="features-area" style="padding-top: 60px;">
+
+    <div class="inline-menu row justify-content-center">
+        <ul>
+            {% for feature in collections.features %}
+            <li><a href="{{ feature.url }}" class="{% if feature.url == page.url %}list-active{% endif %}">{{ feature.data.title_menu | default(feature.data.title) }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section-title text-center pb-10">
+                    <h3 class="title">{{ title_full | default(title) | safe }}</h3>
+                </div> <!-- row -->
+            </div>
+        </div> <!-- row -->
+        <div class="row justify-content-center">
+            <div class="section-title text-center pb-10 text_container">
+                {{ content | safe }}
+            </div>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</section>
+
+{% include "feature_list.html" %}

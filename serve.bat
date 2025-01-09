@@ -1,1 +1,4 @@
-docker run -p 4000:4000 -v %cd%:/srv/jekyll -it jekyll/jekyll:3.8.6 jekyll s --livereload
+@ECHO OFF
+SETLOCAL ENABLEDELAYEDEXPANSION
+cd .11ty & deno run -A npm:@11ty/eleventy --serve & set SAVEDRC=!ERRORLEVEL! & call;
+EXIT /B %SAVEDRC%
