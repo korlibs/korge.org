@@ -43,7 +43,6 @@
     "iconColor": "#71b757"
   },
   "assets": "LiImages",
-  "about.md": "LiQuestionMarkGlyph",
   "privacy.md": "LiLockKeyholeOpen",
   "features/@features.md": "LiSparkles",
   "showcases/@showcases.md": "LiGamepad2",
