@@ -1,6 +1,6 @@
 ---
 title: Jobe's Legacy
-description: Have a look to a stream about a game development done in KorGE!
+description: Have a look to Jobe's Legacy, a twitch stream about the development of a platformer game using KorGE!
 order: 0
 targetLink: https://www.twitch.tv/jobegamedev
 ---

@@ -11,15 +11,14 @@
             "id": "dd23e4f19fa00174",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "features/editor.md",
-                "bFile": "features/editor.md",
-                "aRef": "HEAD",
-                "bRef": ""
+                "file": "highlights/jobe.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: editor"
+              "icon": "lucide-file",
+              "title": "jobe"
             }
           }
         ]
@@ -111,6 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "highlights/jobe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for jobe"
             }
           },
           {
@@ -156,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "highlights/jobe.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of jobe"
             }
           }
         ],
@@ -184,8 +185,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0e0b70e50674f762",
+  "active": "dd23e4f19fa00174",
   "lastOpenFiles": [
+    "highlights/@highlights.md",
+    "showcases/@showcases.md",
+    "features/@features.md",
     "features/bundles.md",
     "features/editor.md",
     "features/productive.md",
@@ -194,11 +198,8 @@
     "privacy.md",
     "about.md",
     "highlights/jobe.md",
-    "highlights/@highlights.md",
-    "features/@features.md",
     "highlights/Untitled.md",
     "highlights",
-    "showcases/@showcases.md",
     "features/kotlin.md",
     "features/debugger.md",
     "sitemap.html",
