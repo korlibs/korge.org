@@ -1,0 +1,13 @@
+node_modules
+.node
+.site
+.static
+.blog/node_modules
+.experiments
+.trash
+.old
+.drafts
+#/.11ty
+/.11ty/node_modules
+/features/@features.md
+/showcases/@showcases.md

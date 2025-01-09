@@ -1,8 +1,0 @@
-- title: Everything
-  filter: "*"
-- title: Puzzle
-  filter: ".puzzle"
-- title: RPG
-  filter: ".rpg"
-- title: ARCADE
-  filter: ".arcade"
