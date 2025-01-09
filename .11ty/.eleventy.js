@@ -22,6 +22,12 @@ function capitalizeFirstLetter(value) {
 	return String(value).charAt(0).toUpperCase() + String(value).slice(1);
 }
 
+Array.prototype.toSorted = function (comparator) {
+	const out = [...this]
+	out.sort(comparator)
+	return out;
+}
+
 // https://github.com/NotWoods/11ty-plugins/blob/typescript/packages/types/index.d.ts
 export default function (eleventyConfig) {
 	eleventyConfig.addCollection("*", function (collectionApi) {
