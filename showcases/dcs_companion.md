@@ -3,7 +3,6 @@ title: DCS Companion
 tags:
   - arcade
 date: 2025-02-02T00:00:00.000+01:00
-icon: /assets/images/dcs_companion.avif
 image: /assets/images/dcs_companion.avif
 showcase: true
 targetLink: https://play.google.com/store/apps/details?id=com.dcshub.app.android
