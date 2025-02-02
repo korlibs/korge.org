@@ -210,7 +210,7 @@ config:
   source_form_result: 
   source_destination_path: /
   row_templates_folder: /
-  current_row_template: showcases/@showcases.md
+  current_row_template: 
   pagination_size: 200
   font_size: 14
   enable_js_formulas: false
