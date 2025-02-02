@@ -11,48 +11,42 @@
             "id": "dd23e4f19fa00174",
             "type": "leaf",
             "state": {
-              "type": "database-plugin",
+              "type": "markdown",
               "state": {
-                "file": "showcases/@showcases.md"
+                "file": "showcases/dcs_companion.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "database-folder-icon",
-              "title": "@showcases"
+              "icon": "lucide-file",
+              "title": "dcs_companion"
             }
-          }
-        ]
-      },
-      {
-        "id": "19c9c4a2be89f579",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "85035571824fb96e",
+            "id": "791f697f0703574d",
             "type": "leaf",
             "state": {
-              "type": "database-plugin",
+              "type": "markdown",
               "state": {
-                "file": "features/@features.md"
+                "file": "showcases/dcs_companion.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "database-folder-icon",
-              "title": "@features"
+              "icon": "lucide-file",
+              "title": "dcs_companion"
             }
-          }
-        ]
-      },
-      {
-        "id": "82f910a5af6583fb",
-        "type": "tabs",
-        "children": [
+          },
           {
-            "id": "c484e72d48aa2436",
+            "id": "ce66e34c80ef42c9",
             "type": "leaf",
             "state": {
-              "type": "database-plugin",
+              "type": "markdown",
               "state": {
-                "file": "highlights/@highlights.md"
+                "file": "showcases/asteroidsplusplus.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "database-folder-icon",
-              "title": "@highlights"
+              "icon": "lucide-file",
+              "title": "asteroidsplusplus"
             }
           }
         ]
@@ -90,7 +84,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -220,13 +215,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0e0b70e50674f762",
+  "active": "dd23e4f19fa00174",
   "lastOpenFiles": [
+    "showcases/@showcases.md",
+    "showcases/dcs_companion.md",
+    "showcases/asteroidsplusplus.md",
+    "assets/images/dcs_companion.avif",
+    "showcases/2048.md",
+    "showcases/dungeon.md",
     "obsidian.avif",
     "README.md",
     "features/@features.md",
     "highlights/@highlights.md",
-    "showcases/@showcases.md",
     "highlights/jobe.md",
     "features/bundles.md",
     "features/editor.md",
@@ -249,15 +249,11 @@
     "build.bat",
     "serve copy.bat",
     "build.sh",
-    "showcases/2048.md",
-    "showcases/asteroidsplusplus.md",
     "features/bundle.md",
     "showcases/hitklack.md",
     "showcases.md",
     "Untitled.md",
     "features/features.md",
-    "showcases/candycrush.md",
-    "showcases/dungeon.md",
     "assets/images/favicon.png",
     "assets/images/f-shape-1.svg",
     "assets/images/enterprise.svg",
@@ -265,7 +261,6 @@
     "assets/images/author-4.jpg",
     "assets/images/author-3.jpg",
     "assets/images/author-2.jpg",
-    "assets/images/author-1.jpg",
-    "assets/images/about.jpg"
+    "assets/images/author-1.jpg"
   ]
 }

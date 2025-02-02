@@ -77,6 +77,121 @@ columns:
       task_hide_completed: true
       footer_type: none
       persist_changes: false
+  date:
+    input: calendar
+    accessorKey: date
+    key: date
+    id: date
+    label: date
+    position: 100
+    skipPersist: false
+    isHidden: false
+    sortIndex: -1
+    config:
+      enable_media_view: true
+      link_alias_enabled: true
+      media_width: 100
+      media_height: 100
+      isInline: false
+      task_hide_completed: true
+      footer_type: none
+      persist_changes: false
+  targetLink:
+    input: text
+    accessorKey: targetLink
+    key: targetLink
+    id: targetLink
+    label: targetLink
+    position: 100
+    skipPersist: false
+    isHidden: false
+    sortIndex: -1
+    config:
+      enable_media_view: true
+      link_alias_enabled: true
+      media_width: 100
+      media_height: 100
+      isInline: false
+      task_hide_completed: true
+      footer_type: none
+      persist_changes: false
+  icon:
+    input: text
+    accessorKey: icon
+    key: icon
+    id: icon
+    label: icon
+    position: 100
+    skipPersist: false
+    isHidden: false
+    sortIndex: -1
+    config:
+      enable_media_view: true
+      link_alias_enabled: true
+      media_width: 100
+      media_height: 100
+      isInline: false
+      task_hide_completed: true
+      footer_type: none
+      persist_changes: false
+  image:
+    input: text
+    accessorKey: image
+    key: image
+    id: image
+    label: image
+    position: 100
+    skipPersist: false
+    isHidden: false
+    sortIndex: -1
+    config:
+      enable_media_view: true
+      link_alias_enabled: true
+      media_width: 100
+      media_height: 100
+      isInline: false
+      task_hide_completed: true
+      footer_type: none
+      persist_changes: false
+  showcase:
+    input: checkbox
+    accessorKey: showcase
+    key: showcase
+    id: showcase
+    label: showcase
+    position: 100
+    skipPersist: false
+    isHidden: false
+    sortIndex: -1
+    config:
+      enable_media_view: true
+      link_alias_enabled: true
+      media_width: 100
+      media_height: 100
+      isInline: false
+      task_hide_completed: true
+      footer_type: none
+      persist_changes: false
+  tags_1:
+    input: tags
+    accessorKey: tags_1
+    key: tags_1
+    id: tags_1
+    label: tags 1
+    position: 100
+    skipPersist: false
+    isHidden: false
+    sortIndex: -1
+    options:
+    config:
+      enable_media_view: true
+      link_alias_enabled: true
+      media_width: 100
+      media_height: 100
+      isInline: false
+      task_hide_completed: true
+      footer_type: none
+      persist_changes: false
 config:
   remove_field_when_delete_column: false
   cell_size: normal
