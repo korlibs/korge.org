@@ -354,7 +354,7 @@ permalink: /
                     <div class="col-lg-4 col-sm-6 {% for tag in post.data.tags %} {{tag}}-tag{% endfor %}">
                         <div class="single-portfolio">
                             <div class="portfolio-image">
-                                <img src="{{ post.data.icon | absolute_url }}" alt="">
+                                <img src="{{ post.data.icon | default(post.data.image) | absolute_url }}" alt="" style="aspect-ratio:1/1; object-fit: cover;">
                                 <div class="portfolio-overlay d-flex align-items-center justify-content-center">
                                     <div class="portfolio-content">
                                         <div class="portfolio-icon">
