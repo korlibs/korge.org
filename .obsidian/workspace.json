@@ -4,49 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "e5cdfec1822d5791",
+        "id": "e00c162ce1387e9c",
         "type": "tabs",
         "children": [
           {
-            "id": "dd23e4f19fa00174",
+            "id": "7ea55cb1ec6ab7c1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "database-plugin",
               "state": {
-                "file": "showcases/dcs_companion.md",
-                "mode": "source",
-                "source": false
+                "file": "showcases/@showcases.md"
               },
-              "icon": "lucide-file",
-              "title": "dcs_companion"
-            }
-          },
-          {
-            "id": "791f697f0703574d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "showcases/dcs_companion.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "dcs_companion"
-            }
-          },
-          {
-            "id": "ce66e34c80ef42c9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "showcases/asteroidsplusplus.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "asteroidsplusplus"
+              "icon": "database-folder-icon",
+              "title": "@showcases"
             }
           }
         ]
@@ -215,11 +185,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dd23e4f19fa00174",
+  "active": "7ea55cb1ec6ab7c1",
   "lastOpenFiles": [
-    "showcases/@showcases.md",
-    "showcases/dcs_companion.md",
+    "showcases/chess.md",
     "showcases/asteroidsplusplus.md",
+    "showcases/dcs_companion.md",
+    "showcases/@showcases.md",
     "assets/images/dcs_companion.avif",
     "showcases/2048.md",
     "showcases/dungeon.md",
